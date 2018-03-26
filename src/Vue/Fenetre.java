@@ -24,7 +24,7 @@ public class Fenetre extends JFrame implements Observer {
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
-    private JPanel pnlGrille = new JPanel();
+    //private JPanel pnlGrille = new JPanel();
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
@@ -97,11 +97,11 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.setPreferredSize(new Dimension(700, 900));
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
-        pnlJeu.add(pnlGrille, BorderLayout.CENTER);
+        pnlJeu.add(image419, BorderLayout.CENTER);
 
-        pnlGrille.setBackground(Color.WHITE);
+        //pnlGrille.setBackground(Color.WHITE);
         //pnlGrille.add(image419);
-        pnlGrille.add(button, BorderLayout.CENTER);
+        image419.add(button, BorderLayout.CENTER);
         //pnlGrille.setBackground(image419);
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
