@@ -25,11 +25,14 @@ public class Fenetre extends JFrame implements Observer {
     
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
-    
+
+    private JPanel pnlTest = new JPanel(new BorderLayout());
+    private JPanel pnlGrille = new JPanel(new GridLayout(6, 6);
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
     private JLabel lblChrono = new JLabel("     00:00 min    ");
     private JLabel lblPoint = new JLabel(nombrePoint + " points     ");
+
 
     private JMenuBar monMenu = new JMenuBar();
     private final JMenu mnuFichier = new JMenu("Fichier");
@@ -68,18 +71,22 @@ public class Fenetre extends JFrame implements Observer {
     private JButton button = new JButton();
 
     public Fenetre(Modele modele) {
-        modele.addObserver(this);
+
+   
 
         //this.modele = modele;
         modele.addObserver(this);
+
 
         setTitle("circuitAEC");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 850);
 
 
+
         settingWindow();
         initMenu();
+
 
         setResizable(false);
         //pack();
@@ -96,15 +103,26 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
         pnlJeu.add(pnlGrille, BorderLayout.CENTER);
+
         
         pnlGrille.setBackground(Color.WHITE);
         pnlGrille.add(button, BorderLayout.CENTER);
         
+
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
         pnlNiveau.add(lblEnoncer, BorderLayout.SOUTH);
         
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
         pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
+
+
+        
+//        TransferHandler transferHandler=new TransferHandler("text");
+//        transferHandler.setDragImage(amperemetre.getImage());
+//        ((JButton)pnlCarre.getComponents()[0]).setTransferHandler(transferHandler);
+//        ((JButton)pnlCarre.getComponents()[0]).addMouseListener(new Mouse 
+        
+       
 
         pnlCarre.add(lblAmperemetre);
         pnlCarre.add(lblAmpoule);
@@ -138,6 +156,7 @@ public class Fenetre extends JFrame implements Observer {
         lblVoltmetre.setTransferHandler(new TransferHandler("icon"));
         
         button.setTransferHandler(new TransferHandler("icon"));
+
 
         JScrollPane scrollPane = new JScrollPane(pnlCarre);
         pnlPrincipal.add(scrollPane);
@@ -259,6 +278,11 @@ public class Fenetre extends JFrame implements Observer {
         });
 
     }
+
+
+      
+
+   
 
 
     public int getNombreNiveau() {
