@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 
 
 public class Resistance extends ImageIcon{
-static Image imageResistance = Toolkit.getDefaultToolkit().getImage("resistanceps.png");
+static Image imageResistance = Toolkit.getDefaultToolkit().getImage("composantes/resistanceps.png");
     public Resistance() {
         super(imageResistance);
     }

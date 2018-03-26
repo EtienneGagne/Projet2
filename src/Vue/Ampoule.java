@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Ampoule extends ImageIcon{
-    static Image imageAmpoule = Toolkit.getDefaultToolkit().getImage("ampouleps.png");
+    static Image imageAmpoule = Toolkit.getDefaultToolkit().getImage("composantes/ampouleps.png");
 
     public Ampoule() {
         super(imageAmpoule);

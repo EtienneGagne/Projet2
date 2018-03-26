@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 
 public class InterrupteurO extends ImageIcon {
-static Image imageInterrupteurO = Toolkit.getDefaultToolkit().getImage("interrupteur-ouvertps.png");
+static Image imageInterrupteurO = Toolkit.getDefaultToolkit().getImage("composantes/interrupteur-ouvertps.png");
     public InterrupteurO() {
         super(imageInterrupteurO);
         

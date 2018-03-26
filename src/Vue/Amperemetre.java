@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 
 public class Amperemetre extends ImageIcon {
-static Image imageAmperemetre = Toolkit.getDefaultToolkit().getImage("amperemetreps.png");
+static Image imageAmperemetre = Toolkit.getDefaultToolkit().getImage("composantes/amperemetreps.png");
     public Amperemetre() {
         super(imageAmperemetre);
     }

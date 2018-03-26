@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class Condensateur extends ImageIcon {
     
-static Image imageCondensateur = Toolkit.getDefaultToolkit().getImage("condensateurps.png");
+static Image imageCondensateur = Toolkit.getDefaultToolkit().getImage("composantes/condensateurps.png");
 
     public Condensateur() {
         super(imageCondensateur);
