@@ -20,18 +20,18 @@ public class Fenetre extends JFrame implements Observer {
     private int nombreNiveau = 0;
     static long chrono = 0;
     private JLabel probleme;
-    
+
     private BackGroudn419 image419 = new BackGroudn419();
-    
+
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
-    private JLabel lblGrille = new JLabel(image419);
-    
+    private JLayeredPane pnlGrille = new JLayeredPane();
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
 
+    private JLabel lblBackground = new JLabel(image419);
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
     private JLabel lblChrono = new JLabel("     00:00 min    ");
@@ -72,9 +72,6 @@ public class Fenetre extends JFrame implements Observer {
     private JLabel lblVoltmetre = new JLabel(voltmetre);
 
     private JButton button = new JButton();
-    
-    
-
 
     public Fenetre(Modele modele) {
         modele.addObserver(this);
@@ -90,8 +87,7 @@ public class Fenetre extends JFrame implements Observer {
         initMenu();
 
         setResizable(false);
-        //pack();
-        //setLayout(null);
+
         this.setVisible(true);
     }
 
@@ -103,10 +99,11 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.setPreferredSize(new Dimension(700, 900));
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
-        pnlJeu.add(lblGrille, BorderLayout.CENTER);
+        pnlJeu.add(pnlGrille, BorderLayout.CENTER);
 
         //lblGrille.setBackground(Color.WHITE);
-        lblGrille.add(button, BorderLayout.CENTER);
+        pnlGrille.add(lblBackground);
+        pnlGrille.add(button, 0);
         //pnlGrille.setBackground(image419);
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
@@ -152,7 +149,6 @@ public class Fenetre extends JFrame implements Observer {
         pnlPrincipal.add(scrollPane);
 
     }
-    
 
     private void initMenu() {
 
