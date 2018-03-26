@@ -4,7 +4,9 @@ import Modele.Modele;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
@@ -18,14 +20,18 @@ public class Fenetre extends JFrame implements Observer {
     private int nombreNiveau = 0;
     static long chrono = 0;
     private JLabel probleme;
+    
+    private BackGroudn419 image419 = new BackGroudn419();
+    
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
-    private JPanel pnlGrille = new JPanel(new GridLayout(6, 6));
+    private JLabel lblGrille = new JLabel(image419);
     
+
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
-    
+
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
     private JLabel lblChrono = new JLabel("     00:00 min    ");
@@ -55,17 +61,20 @@ public class Fenetre extends JFrame implements Observer {
     private Resistance resistance = new Resistance();
     private Voltmetre voltmetre = new Voltmetre();
 
-    private JLabel lblAmperemetre = new JLabel (amperemetre);
-    private JLabel lblAmpoule = new JLabel (ampoule);
-    private JLabel lblBobine = new JLabel (bobine);
-    private JLabel lblCondensateur = new JLabel (condensateur);
-    private JLabel lblInterrupteurO = new JLabel (interrupteurO);
-    private JLabel lblInterrupteurF = new JLabel (interrupteurF);
-    private JLabel lblPile = new JLabel (pile);
-    private JLabel lblResistance = new JLabel (resistance);
-    private JLabel lblVoltmetre = new JLabel (voltmetre);
-    
+    private JLabel lblAmperemetre = new JLabel(amperemetre);
+    private JLabel lblAmpoule = new JLabel(ampoule);
+    private JLabel lblBobine = new JLabel(bobine);
+    private JLabel lblCondensateur = new JLabel(condensateur);
+    private JLabel lblInterrupteurO = new JLabel(interrupteurO);
+    private JLabel lblInterrupteurF = new JLabel(interrupteurF);
+    private JLabel lblPile = new JLabel(pile);
+    private JLabel lblResistance = new JLabel(resistance);
+    private JLabel lblVoltmetre = new JLabel(voltmetre);
+
     private JButton button = new JButton();
+    
+    
+
 
     public Fenetre(Modele modele) {
         modele.addObserver(this);
@@ -76,7 +85,6 @@ public class Fenetre extends JFrame implements Observer {
         setTitle("circuitAEC");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 850);
-
 
         settingWindow();
         initMenu();
@@ -91,18 +99,19 @@ public class Fenetre extends JFrame implements Observer {
         add(pnlPrincipal);
         pnlPrincipal.add(pnlJeu, BorderLayout.EAST);
         pnlPrincipal.add(pnlCarre, BorderLayout.WEST);
-        
+
         pnlJeu.setPreferredSize(new Dimension(700, 900));
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
-        pnlJeu.add(pnlGrille, BorderLayout.CENTER);
-        
-        pnlGrille.setBackground(Color.WHITE);
-        pnlGrille.add(button, BorderLayout.CENTER);
-        
+        pnlJeu.add(lblGrille, BorderLayout.CENTER);
+
+        //lblGrille.setBackground(Color.WHITE);
+        lblGrille.add(button, BorderLayout.CENTER);
+        //pnlGrille.setBackground(image419);
+
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
         pnlNiveau.add(lblEnoncer, BorderLayout.SOUTH);
-        
+
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
         pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
 
@@ -115,7 +124,7 @@ public class Fenetre extends JFrame implements Observer {
         pnlCarre.add(lblPile);
         pnlCarre.add(lblResistance);
         pnlCarre.add(lblVoltmetre);
-        
+
         MouseListener listener = new DragMouseAdapter();
         lblAmperemetre.addMouseListener(listener);
         lblAmpoule.addMouseListener(listener);
@@ -136,13 +145,14 @@ public class Fenetre extends JFrame implements Observer {
         lblPile.setTransferHandler(new TransferHandler("icon"));
         lblResistance.setTransferHandler(new TransferHandler("icon"));
         lblVoltmetre.setTransferHandler(new TransferHandler("icon"));
-        
+
         button.setTransferHandler(new TransferHandler("icon"));
 
         JScrollPane scrollPane = new JScrollPane(pnlCarre);
         pnlPrincipal.add(scrollPane);
 
     }
+    
 
     private void initMenu() {
 
@@ -239,17 +249,17 @@ public class Fenetre extends JFrame implements Observer {
 
         mnuChrono.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                Timer timer = new Timer(1000, new ActionListener(){
+                Timer timer = new Timer(1000, new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        
-                        lblChrono.setText(String.valueOf((System.nanoTime()%1000)-1000)+ "sec");
+
+                        lblChrono.setText(String.valueOf((System.nanoTime() % 1000) - 1000) + "sec");
                     }
-                    
+
                 });
                 timer.start();
             }
-            
+
         });
 
         mnuLibre.addActionListener(new ActionListener() {
@@ -259,7 +269,6 @@ public class Fenetre extends JFrame implements Observer {
         });
 
     }
-
 
     public int getNombreNiveau() {
         return nombreNiveau;
