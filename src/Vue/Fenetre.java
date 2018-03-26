@@ -4,9 +4,7 @@ import Modele.Modele;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
@@ -21,17 +19,17 @@ public class Fenetre extends JFrame implements Observer {
     static long chrono = 0;
     private JLabel probleme;
 
-    private BackGroudn419 image419 = new BackGroudn419();
+    private BackGroudn419 image419 = new BackGroudn419(650,750);
 
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
-    private JLayeredPane pnlGrille = new JLayeredPane();
+    private JPanel pnlGrille = new JPanel();
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
 
-    private JLabel lblBackground = new JLabel(image419);
+    //private JLabel lblBackground = new JLabel(image419);
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
     private JLabel lblChrono = new JLabel("     00:00 min    ");
@@ -101,9 +99,9 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
         pnlJeu.add(pnlGrille, BorderLayout.CENTER);
 
-        //lblGrille.setBackground(Color.WHITE);
-        pnlGrille.add(lblBackground);
-        pnlGrille.add(button, 0);
+        pnlGrille.setBackground(Color.WHITE);
+        //pnlGrille.add(image419);
+        pnlGrille.add(button, BorderLayout.CENTER);
         //pnlGrille.setBackground(image419);
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
@@ -112,15 +110,15 @@ public class Fenetre extends JFrame implements Observer {
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
         pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
 
-        pnlCarre.add(lblAmperemetre);
-        pnlCarre.add(lblAmpoule);
-        pnlCarre.add(lblBobine);
-        pnlCarre.add(lblCondensateur);
-        pnlCarre.add(lblInterrupteurO);
-        pnlCarre.add(lblInterrupteurF);
-        pnlCarre.add(lblPile);
-        pnlCarre.add(lblResistance);
-        pnlCarre.add(lblVoltmetre);
+        pnlCarre.add(lblAmperemetre,0);
+        pnlCarre.add(lblAmpoule,0);
+        pnlCarre.add(lblBobine,0);
+        pnlCarre.add(lblCondensateur,0);
+        pnlCarre.add(lblInterrupteurO,0);
+        pnlCarre.add(lblInterrupteurF,0);
+        pnlCarre.add(lblPile,0);
+        pnlCarre.add(lblResistance,0);
+        pnlCarre.add(lblVoltmetre,0);
 
         MouseListener listener = new DragMouseAdapter();
         lblAmperemetre.addMouseListener(listener);
@@ -181,6 +179,7 @@ public class Fenetre extends JFrame implements Observer {
 
     public void listenersMenus() {
         mnuNouvellePartie.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
 //            	finDePartie();
 //            	modele.reset();
@@ -188,12 +187,14 @@ public class Fenetre extends JFrame implements Observer {
         });
 
         mnuAPropos.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
                 JOptionPane.showMessageDialog(null, "Étienne Gagné,Audrey Lupien et Cloé Lachance, créé le 54 fevars");
             }
         });
 
         mnuQuitter.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
 
                 int dialogBouton = JOptionPane.YES_NO_OPTION;
@@ -208,12 +209,14 @@ public class Fenetre extends JFrame implements Observer {
         });
 
         mnuFormules.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
                 JOptionPane.showMessageDialog(null, "Ajouter Formules ici!!!");
             }
         });
 
         mnuReponses.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
                 Object reponse = JOptionPane.showInputDialog(null,
                         "De quel niveau voulez-vous voir la réponse ?", "Réponses",
@@ -222,6 +225,7 @@ public class Fenetre extends JFrame implements Observer {
             }
         });
         mnuRegles.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
                 JOptionPane.showMessageDialog(null, "Règles et commandes du jeu : \n"
                         + "_________________________\n"
@@ -238,12 +242,14 @@ public class Fenetre extends JFrame implements Observer {
         });
 
         mnuApprentissage.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
 //            	
             }
         });
 
         mnuChrono.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
                 Timer timer = new Timer(1000, new ActionListener() {
                     @Override
@@ -259,6 +265,7 @@ public class Fenetre extends JFrame implements Observer {
         });
 
         mnuLibre.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent ae) {
 //            	
             }
