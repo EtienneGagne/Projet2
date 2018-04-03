@@ -81,7 +81,10 @@ public class Fenetre extends JFrame implements Observer {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 850);
 
+        
         settingWindow();
+//        image419.setLayout(null);
+//        image419.init();
         initMenu();
 
         setResizable(false);
