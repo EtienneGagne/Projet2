@@ -2,12 +2,12 @@ package Vue;
 
 import Modele.Modele;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
@@ -21,7 +21,7 @@ public class Fenetre extends JFrame implements Observer {
 
 
 
-     private BackGroudn619 image619 = new BackGroudn619(650,750);
+    private BackGroudn619 image619 = new BackGroudn619(650,750);
     private BackGroudn625 image625 = new BackGroudn625(650, 750);
     private BackGroudn639 image639 = new BackGroudn639(650, 750);
     private BackGroudn661 image661 = new BackGroudn661(650, 750);
@@ -80,8 +80,6 @@ public class Fenetre extends JFrame implements Observer {
     private JLabel lblResistance = new JLabel(resistance);
     private JLabel lblVoltmetre = new JLabel(voltmetre);
 
-    private JButton button = new JButton();
-
     public Fenetre(Modele modele) {
         modele.addObserver(this);
 
@@ -93,8 +91,7 @@ public class Fenetre extends JFrame implements Observer {
         setSize(900, 850);
 
         settingWindow();
-//        image419.setLayout(null);
-//        image419.init();
+
         initMenu();
 
         setResizable(false);
@@ -111,7 +108,7 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
 //        pnlJeu.add(image419, BorderLayout.CENTER);
-//          pnlJeu.add(image619, BorderLayout.CENTER);
+//        pnlJeu.add(image619, BorderLayout.CENTER);
 //        pnlJeu.add(image625, BorderLayout.CENTER);
 //        pnlJeu.add(image639, BorderLayout.CENTER);
 //        pnlJeu.add(image661, BorderLayout.CENTER);
@@ -159,7 +156,6 @@ public class Fenetre extends JFrame implements Observer {
         lblResistance.setTransferHandler(new TransferHandler("icon"));
         lblVoltmetre.setTransferHandler(new TransferHandler("icon"));
 
-        button.setTransferHandler(new TransferHandler("icon"));
 
         JScrollPane scrollPane = new JScrollPane(pnlCarre);
         pnlPrincipal.add(scrollPane);
@@ -229,8 +225,21 @@ public class Fenetre extends JFrame implements Observer {
         mnuFormules.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                JOptionPane.showMessageDialog(null, "Ajouter Formules ici!!!");
+                 
+                Runtime runtime = Runtime.getRuntime();
+                
+                //changer le chemin pour le adobeReader et le fichier pdf
+                String[] args = { "C:/Programmes/Adobe/Reader/Reader/AcroRd32.exe", "/C", "dir C:\\ >Users/A1008348/Desktop/BD.pdf" };
+                try {
+                    final Process process = runtime.exec(args);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+ 
+ 
+                 
             }
+            
         });
 
         mnuReponses.addActionListener(new ActionListener() {
@@ -259,12 +268,25 @@ public class Fenetre extends JFrame implements Observer {
             }
         });
 
-        mnuApprentissage.addActionListener(new ActionListener() {
+       mnuApprentissage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-//            	
+
+                String[] niveaux = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+
+                String input = (String) JOptionPane.showInputDialog(null,
+                        "Choisissez un niveau : ", "Niveaux",
+                        JOptionPane.QUESTION_MESSAGE, null, niveaux, niveaux[0]);
+
+                if (input == "1") {
+                    pnlJeu.add(image419, BorderLayout.CENTER);
+                }
+                if (input == "2") {
+                    pnlJeu.add(image619, BorderLayout.CENTER);
+                }
             }
         });
+
 
         mnuChrono.addActionListener(new ActionListener() {
             @Override
