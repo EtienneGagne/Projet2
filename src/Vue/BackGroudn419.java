@@ -45,15 +45,16 @@ public class BackGroudn419 extends JPanel{
     add(button[2]);
     add(button[3]);
     add(button[4]);
-    button[0].setBounds(280,125,100,75);
+                      //x    y   L  H
+    button[0].setBounds(200,130,100,75);
     button[0].setTransferHandler(new TransferHandler("icon"));
-    button[1].setBounds(280,200,100,75);
+    button[1].setBounds(370,130,100,75);
     button[1].setTransferHandler(new TransferHandler("icon"));
-    button[2].setBounds(280,275,100,75);
+    button[2].setBounds(200,340,100,75);
     button[2].setTransferHandler(new TransferHandler("icon"));
-    button[3].setBounds(280,350,100,75);
+    button[3].setBounds(370,340,100,75);
     button[3].setTransferHandler(new TransferHandler("icon"));
-    button[4].setBounds(280,425,100,75);
+    button[4].setBounds(280,610,100,75);
     button[4].setTransferHandler(new TransferHandler("icon"));
 }
 
