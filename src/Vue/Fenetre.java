@@ -105,7 +105,7 @@ public class Fenetre extends JFrame implements Observer {
         //pnlGrille.setBackground(Color.WHITE);
         //pnlGrille.add(image419);
         button.setPreferredSize(new Dimension(100,75));
-        image419.add(button, BorderLayout.CENTER);
+  //      image419.add(button, BorderLayout.CENTER);
         //pnlGrille.setBackground(image419);
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
