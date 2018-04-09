@@ -19,17 +19,19 @@ public class Fenetre extends JFrame implements Observer {
     static long chrono = 0;
     private JLabel probleme;
 
-    private BackGroudn419 image419 = new BackGroudn419(650,750);
+//    private BackGroudn419 image419 = new BackGroudn419(650,750);
+//     private BackGroudn619 image619 = new BackGroudn619(650,750);
+//    private BackGroudn625 image625 = new BackGroudn625(650, 750);
+    private BackGroudn639 image639 = new BackGroudn639(650, 750);
+    private BackGroudn661 image661 = new BackGroudn661(650, 750);
 
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
-    //private JPanel pnlGrille = new JPanel();
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
 
-    //private JLabel lblBackground = new JLabel(image419);
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
     private JLabel lblChrono = new JLabel("     00:00 min    ");
@@ -81,7 +83,6 @@ public class Fenetre extends JFrame implements Observer {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 850);
 
-        
         settingWindow();
 //        image419.setLayout(null);
 //        image419.init();
@@ -100,13 +101,11 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.setPreferredSize(new Dimension(700, 900));
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
-        pnlJeu.add(image419, BorderLayout.CENTER);
-
-        //pnlGrille.setBackground(Color.WHITE);
-        //pnlGrille.add(image419);
-        button.setPreferredSize(new Dimension(100,75));
-  //      image419.add(button, BorderLayout.CENTER);
-        //pnlGrille.setBackground(image419);
+//        pnlJeu.add(image419, BorderLayout.CENTER);
+//          pnlJeu.add(image619, BorderLayout.CENTER);
+//        pnlJeu.add(image625, BorderLayout.CENTER);
+//        pnlJeu.add(image639, BorderLayout.CENTER);
+        pnlJeu.add(image661, BorderLayout.CENTER);
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
         pnlNiveau.add(lblEnoncer, BorderLayout.SOUTH);
@@ -114,15 +113,15 @@ public class Fenetre extends JFrame implements Observer {
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
         pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
 
-        pnlCarre.add(lblAmperemetre,0);
-        pnlCarre.add(lblAmpoule,0);
-        pnlCarre.add(lblBobine,0);
-        pnlCarre.add(lblCondensateur,0);
-        pnlCarre.add(lblInterrupteurO,0);
-        pnlCarre.add(lblInterrupteurF,0);
-        pnlCarre.add(lblPile,0);
-        pnlCarre.add(lblResistance,0);
-        pnlCarre.add(lblVoltmetre,0);
+        pnlCarre.add(lblAmperemetre, 0);
+        pnlCarre.add(lblAmpoule, 0);
+        pnlCarre.add(lblBobine, 0);
+        pnlCarre.add(lblCondensateur, 0);
+        pnlCarre.add(lblInterrupteurO, 0);
+        pnlCarre.add(lblInterrupteurF, 0);
+        pnlCarre.add(lblPile, 0);
+        pnlCarre.add(lblResistance, 0);
+        pnlCarre.add(lblVoltmetre, 0);
 
         MouseListener listener = new DragMouseAdapter();
         lblAmperemetre.addMouseListener(listener);
