@@ -19,8 +19,12 @@ public class Fenetre extends JFrame implements Observer {
     static long chrono = 0;
     private JLabel probleme;
 
-    private BackGroudn419 image419 = new BackGroudn419(650,750);
-
+   // private BackGroudn419 image419 = new BackGroudn419(650,750);
+    //private BackGroudn621 image621 = new BackGroudn621(650,750);
+    //private BackGroudn632 image632 = new BackGroudn632(650,750);
+    //private BackGroudn651 image651 = new BackGroudn651(650,750);
+    private BackGroudn667 image667 = new BackGroudn667(650,750);
+    
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
@@ -100,7 +104,7 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.setPreferredSize(new Dimension(700, 900));
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
-        pnlJeu.add(image419, BorderLayout.CENTER);
+        pnlJeu.add(image667, BorderLayout.CENTER);
 
         //pnlGrille.setBackground(Color.WHITE);
         //pnlGrille.add(image419);
