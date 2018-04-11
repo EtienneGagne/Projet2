@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
 
-public class BackGroudn639 extends JPanel {
+public class BackGround639 extends Background {
      
 
     JButton btnUn = new JButton();
@@ -21,6 +21,11 @@ public class BackGroudn639 extends JPanel {
 
     Image image639 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.39.png");
     JButton button[] = new JButton[6];
+    
+    public BackGround639() {
+        super();
+        init();
+    }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -30,12 +35,6 @@ public class BackGroudn639 extends JPanel {
 
     }
 
-    public BackGroudn639(int hauteur, int largeur) {
-        setLayout(null);
-        setSize(largeur, hauteur);
-        init();
-
-    }
 
     public void init() {
         button[0] = btnUn;

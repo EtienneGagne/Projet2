@@ -9,35 +9,32 @@ import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
 
-public class BackGroudn632 extends JPanel  {
+public class BackGround667 extends Background  {
      
-    JButton btnUn=new JButton();
+JButton btnUn=new JButton();
     JButton btnDeux=new JButton();
     JButton btnTrois=new JButton();
     JButton btnQuatre=new JButton();
     JButton btnCinq=new JButton();
     JButton btnSix=new JButton();
-    JButton btnSept=new JButton();
-    JButton btnHuit=new JButton();
     
-    Image image632 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.32.png");
-    JButton button[] = new JButton[8];   
     
+    Image image667 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.67.png");
+    JButton button[] = new JButton[6];   
+    
+    public BackGround667() {
+        super();
+        init();
+    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.drawImage(image632, 0, 0,this);
+        g.drawImage(image667, 0, 0,this);
 
     }
 
-    public BackGroudn632(int hauteur, int largeur) {
-        setLayout(null);
-        setSize(largeur, hauteur);
-        init();
-        
-    }
     
     public void init() {
         button[0]=btnUn;
@@ -46,9 +43,7 @@ public class BackGroudn632 extends JPanel  {
         button[3]=btnQuatre;
         button[4]=btnCinq;
         button[5]=btnSix;
-        button[6]=btnSept;
-        button[7]=btnHuit;
-        
+      
         
     add(button[0]);
     add(button[1]);
@@ -56,27 +51,24 @@ public class BackGroudn632 extends JPanel  {
     add(button[3]);
     add(button[4]);
     add(button[5]);
-    add(button[6]);
-    add(button[7]);
-    
+ 
                       //x    y   L  H
-    button[0].setBounds(120,50,100,75);
+    button[0].setBounds(245,65,100,75);
     button[0].setTransferHandler(new TransferHandler("icon"));
-    button[1].setBounds(260,50,100,75);
+    button[1].setBounds(85,250,100,75);
     button[1].setTransferHandler(new TransferHandler("icon"));
-    button[2].setBounds(400,50,100,75);
+    button[2].setBounds(300,250,100,75);
     button[2].setTransferHandler(new TransferHandler("icon"));
     
-    button[3].setBounds(120,230,100,75);
+    button[3].setBounds(220,385,100,75);
     button[3].setTransferHandler(new TransferHandler("icon"));
-    button[4].setBounds(260,230,100,75);
+    
+    button[4].setBounds(150,545,100,75);
     button[4].setTransferHandler(new TransferHandler("icon"));
-    button[5].setBounds(400,230,100,75);
+    button[5].setBounds(380,545,100,75);
     button[5].setTransferHandler(new TransferHandler("icon"));
   
-    button[6].setBounds(160,600,100,75);
-    button[6].setTransferHandler(new TransferHandler("icon"));
-    button[7].setBounds(360,600,100,75);
-    button[7].setTransferHandler(new TransferHandler("icon"));
+  
 }
+    
 }

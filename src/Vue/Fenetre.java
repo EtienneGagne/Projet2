@@ -2,38 +2,35 @@ package Vue;
 
 import Modele.Modele;
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class Fenetre extends JFrame implements Observer {
 
     private int nombrePoint = 0;
     private int nombreNiveau = 0;
-    static long chrono = 0;
+    private long chrono = 0;
     private JLabel probleme;
 
 
-
-    private BackGroudn619 image619 = new BackGroudn619(650,750);
-    private BackGroudn625 image625 = new BackGroudn625(650, 750);
-    private BackGroudn639 image639 = new BackGroudn639(650, 750);
-    private BackGroudn661 image661 = new BackGroudn661(650, 750);
-
-
-    private BackGroudn419 image419 = new BackGroudn419(650,750);
-    private BackGroudn621 image621 = new BackGroudn621(650,750);
-    private BackGroudn632 image632 = new BackGroudn632(650,750);
-    private BackGroudn651 image651 = new BackGroudn651(650,750);
-    private BackGroudn667 image667 = new BackGroudn667(650,750);
+    private Background backgrounds[];
+   
+    private Background backgroundActuel;
     
-
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
     private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
@@ -43,7 +40,7 @@ public class Fenetre extends JFrame implements Observer {
 
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
-    private JLabel lblChrono = new JLabel("     00:00 min    ");
+    private JLabel lblChrono = new JLabel("     00:00      ");
     private JLabel lblPoint = new JLabel(nombrePoint + " points     ");
 
     private JMenuBar monMenu = new JMenuBar();
@@ -70,15 +67,21 @@ public class Fenetre extends JFrame implements Observer {
     private Resistance resistance = new Resistance();
     private Voltmetre voltmetre = new Voltmetre();
 
-    private JLabel lblAmperemetre = new JLabel(amperemetre);
-    private JLabel lblAmpoule = new JLabel(ampoule);
-    private JLabel lblBobine = new JLabel(bobine);
-    private JLabel lblCondensateur = new JLabel(condensateur);
-    private JLabel lblInterrupteurO = new JLabel(interrupteurO);
-    private JLabel lblInterrupteurF = new JLabel(interrupteurF);
-    private JLabel lblPile = new JLabel(pile);
-    private JLabel lblResistance = new JLabel(resistance);
-    private JLabel lblVoltmetre = new JLabel(voltmetre);
+    private JLabel composantes[] = {new JLabel(amperemetre),
+        new JLabel(ampoule), new JLabel(bobine), new JLabel(condensateur),
+        new JLabel(interrupteurO), new JLabel(interrupteurF),
+        new JLabel(pile), new JLabel(resistance), new JLabel(voltmetre)};
+    
+    Timer timer = new Timer(1000, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            chrono++;
+            Date temps = new Date(chrono * 1000);
+            SimpleDateFormat ft = new SimpleDateFormat("mm:ss");
+            lblChrono.setText("     " + ft.format(temps) + "     ");
+        }
+
+    });
 
     public Fenetre(Modele modele) {
         modele.addObserver(this);
@@ -97,6 +100,8 @@ public class Fenetre extends JFrame implements Observer {
         setResizable(false);
 
         this.setVisible(true);
+        
+        creerNiveaux();
     }
 
     public void settingWindow() {
@@ -107,17 +112,6 @@ public class Fenetre extends JFrame implements Observer {
         pnlJeu.setPreferredSize(new Dimension(700, 900));
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
-//        pnlJeu.add(image419, BorderLayout.CENTER);
-//        pnlJeu.add(image619, BorderLayout.CENTER);
-//        pnlJeu.add(image625, BorderLayout.CENTER);
-//        pnlJeu.add(image639, BorderLayout.CENTER);
-//        pnlJeu.add(image661, BorderLayout.CENTER);
-
-        pnlJeu.add(image667, BorderLayout.CENTER);
-
-    
-        
-
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
         pnlNiveau.add(lblEnoncer, BorderLayout.SOUTH);
@@ -125,37 +119,15 @@ public class Fenetre extends JFrame implements Observer {
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
         pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
 
-        pnlCarre.add(lblAmperemetre, 0);
-        pnlCarre.add(lblAmpoule, 0);
-        pnlCarre.add(lblBobine, 0);
-        pnlCarre.add(lblCondensateur, 0);
-        pnlCarre.add(lblInterrupteurO, 0);
-        pnlCarre.add(lblInterrupteurF, 0);
-        pnlCarre.add(lblPile, 0);
-        pnlCarre.add(lblResistance, 0);
-        pnlCarre.add(lblVoltmetre, 0);
+        for (JLabel composante : composantes) {
+            pnlCarre.add(composante);
+        }
 
         MouseListener listener = new DragMouseAdapter();
-        lblAmperemetre.addMouseListener(listener);
-        lblAmpoule.addMouseListener(listener);
-        lblBobine.addMouseListener(listener);
-        lblCondensateur.addMouseListener(listener);
-        lblInterrupteurO.addMouseListener(listener);
-        lblInterrupteurF.addMouseListener(listener);
-        lblPile.addMouseListener(listener);
-        lblResistance.addMouseListener(listener);
-        lblVoltmetre.addMouseListener(listener);
-
-        lblAmperemetre.setTransferHandler(new TransferHandler("icon"));
-        lblAmpoule.setTransferHandler(new TransferHandler("icon"));
-        lblBobine.setTransferHandler(new TransferHandler("icon"));
-        lblCondensateur.setTransferHandler(new TransferHandler("icon"));
-        lblInterrupteurO.setTransferHandler(new TransferHandler("icon"));
-        lblInterrupteurF.setTransferHandler(new TransferHandler("icon"));
-        lblPile.setTransferHandler(new TransferHandler("icon"));
-        lblResistance.setTransferHandler(new TransferHandler("icon"));
-        lblVoltmetre.setTransferHandler(new TransferHandler("icon"));
-
+        for (JLabel composante : composantes) {
+            composante.addMouseListener(listener);
+            composante.setTransferHandler(new TransferHandler("icon"));
+        }
 
         JScrollPane scrollPane = new JScrollPane(pnlCarre);
         pnlPrincipal.add(scrollPane);
@@ -195,6 +167,14 @@ public class Fenetre extends JFrame implements Observer {
         mnuNouvellePartie.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
+                if (backgroundActuel != null) {
+                    pnlJeu.remove(backgroundActuel);
+                    pnlJeu.revalidate();
+                    pnlJeu.repaint();
+                }
+                creerNiveaux();
+                timer.stop();
+                chrono = 0;
 //            	finDePartie();
 //            	modele.reset();
             }
@@ -228,16 +208,16 @@ public class Fenetre extends JFrame implements Observer {
                  
                 Runtime runtime = Runtime.getRuntime();
                 
-                //changer le chemin pour le adobeReader et le fichier pdf
-                String[] args = { "C:/Programmes/Adobe/Reader/Reader/AcroRd32.exe", "/C", "dir C:\\ >Users/A1008348/Desktop/BD.pdf" };
-                try {
-                    final Process process = runtime.exec(args);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
- 
- 
-                 
+                // Utilise le web browser par default pour ouvrir le pdf.
+                if (Desktop.isDesktopSupported()) {
+                    try {
+                        Desktop.getDesktop().browse(new URI("aide-memoire_final.pdf"));
+                    } catch (URISyntaxException ex) {
+                        Logger.getLogger(Fenetre.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Fenetre.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }             
             }
             
         });
@@ -272,18 +252,19 @@ public class Fenetre extends JFrame implements Observer {
             @Override
             public void actionPerformed(ActionEvent ae) {
 
-                String[] niveaux = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+                Integer[] niveaux = {1,2,3,4,5,6,7,8,9};
 
-                String input = (String) JOptionPane.showInputDialog(null,
+                int input = (int) JOptionPane.showInputDialog(null,
                         "Choisissez un niveau : ", "Niveaux",
                         JOptionPane.QUESTION_MESSAGE, null, niveaux, niveaux[0]);
 
-                if (input == "1") {
-                    pnlJeu.add(image419, BorderLayout.CENTER);
+                if (backgroundActuel != null) {
+                    pnlJeu.remove(backgroundActuel);
                 }
-                if (input == "2") {
-                    pnlJeu.add(image619, BorderLayout.CENTER);
-                }
+                backgroundActuel = backgrounds[input - 1];
+                pnlJeu.add(backgroundActuel, BorderLayout.CENTER);
+                pnlJeu.revalidate();
+                pnlJeu.repaint();
             }
         });
 
@@ -291,14 +272,6 @@ public class Fenetre extends JFrame implements Observer {
         mnuChrono.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Timer timer = new Timer(1000, new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-
-                        lblChrono.setText(String.valueOf((System.nanoTime() % 1000) - 1000) + "sec");
-                    }
-
-                });
                 timer.start();
             }
 
@@ -313,6 +286,13 @@ public class Fenetre extends JFrame implements Observer {
 
     }
 
+    private void creerNiveaux() {
+        backgrounds = new Background[] {new BackGround419(),new BackGround619(),
+                                        new BackGround621(), new BackGround625(),
+                                        new BackGround632(),new BackGround639(),
+                                        new BackGround651(), new BackGround661(), 
+                                        new BackGround667()};
+    }
     public int getNombreNiveau() {
         return nombreNiveau;
     }
