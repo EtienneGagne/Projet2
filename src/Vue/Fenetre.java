@@ -24,7 +24,7 @@ public class Fenetre extends JFrame implements Observer {
     private int nombrePoint = 0;
     private int nombreNiveau = 0;
     private long chrono = 0;
-    private JLabel probleme;
+    private String probleme="";
 
 
     private Background backgrounds[];
@@ -40,6 +40,7 @@ public class Fenetre extends JFrame implements Observer {
 
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
     private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
+    
     private JLabel lblChrono = new JLabel("     00:00      ");
     private JLabel lblPoint = new JLabel(nombrePoint + " points     ");
 
@@ -263,8 +264,16 @@ public class Fenetre extends JFrame implements Observer {
                 }
                 backgroundActuel = backgrounds[input - 1];
                 pnlJeu.add(backgroundActuel, BorderLayout.CENTER);
+//                System.out.println(backgroundActuel.toString());
+                probleme=backgroundActuel.toString();
+                lblEnoncer.setText("Énoncé du problème : " + probleme);
+                
+                System.out.println(probleme);
+//                lblEnoncer.revalidate();
+               
                 pnlJeu.revalidate();
                 pnlJeu.repaint();
+                
             }
         });
 

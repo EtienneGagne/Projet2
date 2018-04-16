@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
@@ -13,6 +14,7 @@ public class BackGround419 extends Background{
     JButton btnTrois=new JButton();
     JButton btnQuatre=new JButton();
     JButton btnCinq=new JButton();
+//    String enonceProbleme="Calculez la capacité du condensateur manquant pour que la capacité équivalente soit 1,25 µF.";
     
     Image image419 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/4.19.png");
     JButton button[] = new JButton[5];   
@@ -54,5 +56,15 @@ public class BackGround419 extends Background{
         button[4].setBounds(280, 610, 100, 75);
         button[4].setTransferHandler(new TransferHandler("icon"));
     }
+
+    
+    @Override
+    public String toString() {
+        return "Calculez la capacité du condensateur manquant pour que la capacité équivalente soit 1,25 µF.";
+    }
+
+  
+    
+    
 
 }
