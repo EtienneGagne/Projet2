@@ -77,4 +77,8 @@ public class BackGround632 extends Background  {
     button[7].setBounds(360,600,100,75);
     button[7].setTransferHandler(new TransferHandler("icon"));
 }
+    @Override
+    public String toString() {
+        return "";
+    }
 }

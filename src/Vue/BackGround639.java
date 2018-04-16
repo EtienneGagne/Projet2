@@ -62,4 +62,8 @@ public class BackGround639 extends Background {
         button[4].setTransferHandler(new TransferHandler("icon"));
        
     }
+    @Override
+    public String toString() {
+        return "";
+    }
 }

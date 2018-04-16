@@ -71,4 +71,9 @@ public class BackGround625 extends Background {
         button[7].setBounds(250, 595, 100, 75);
         button[7].setTransferHandler(new TransferHandler("icon"));
     }
+    @Override
+    public String toString() {
+        return "a) Place l'ampèremètre au bonne endroit avec la bonne valeur."
+                + "b) Place le voltmètre au bonne endroit avec la bonne valeur.";
+    }
 }

@@ -60,4 +60,9 @@ public class BackGround619 extends Background {
         button[5].setBounds(250, 590, 100, 75);
         button[5].setTransferHandler(new TransferHandler("icon"));
     }
+     @Override
+    public String toString() {
+        return "a)Dans le circuit suivant, la résistance équivalente est 4,13Ω. Trouvez la valeur de R."
+                + "b)L'intensité de la résistance de 2Ω est de 1,94 A. Trouvez le potentiel de la pile.";
+    }
 }

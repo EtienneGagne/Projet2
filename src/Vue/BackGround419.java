@@ -1,20 +1,20 @@
 package Vue;
 
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
 public class BackGround419 extends Background{
-    JButton btnUn=new JButton();
-    JButton btnDeux=new JButton();
+    private Condensateur condensateur=new Condensateur();
+     final JButton btnUn=new JButton(condensateur);
+    JButton btnDeux=new JButton("R");
     JButton btnTrois=new JButton();
     JButton btnQuatre=new JButton();
     JButton btnCinq=new JButton();
-//    String enonceProbleme="Calculez la capacité du condensateur manquant pour que la capacité équivalente soit 1,25 µF.";
+
     
     Image image419 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/4.19.png");
     JButton button[] = new JButton[5];   
@@ -46,7 +46,7 @@ public class BackGround419 extends Background{
         add(button[4]);
         //x    y   L  H
         button[0].setBounds(200, 130, 100, 75);
-        button[0].setTransferHandler(new TransferHandler("icon"));
+//        button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(370, 130, 100, 75);
         button[1].setTransferHandler(new TransferHandler("icon"));
         button[2].setBounds(200, 340, 100, 75);

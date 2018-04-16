@@ -71,8 +71,11 @@ public class BackGround621 extends Background  {
     button[6].setTransferHandler(new TransferHandler("icon"));
 }
      @Override
-    public String toString(){
-       return "salut";
+    public String toString() {
+        return "a) Au temps t=0, calculez les résistances manquantes si "
+                + "la résistance équivalente de R1 et la résistance de 1 Ohm est "
+                + "de 12 Omh et que la résistance équivalente du circuit est de 0.375 ohm."
+                + "b) Une fois que le condensateur est plein, qu'elle est la résisante équivalente du circuit. ";
     }
    
     
