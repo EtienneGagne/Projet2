@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
@@ -17,6 +18,7 @@ public class BackGround621 extends Background  {
     JButton btnCinq=new JButton();
     JButton btnSix=new JButton();
     JButton btnSept=new JButton();
+    String enonceProbleme;
     
     
     Image image621 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.21.png");
@@ -68,5 +70,10 @@ public class BackGround621 extends Background  {
     button[6].setBounds(400,600,100,75);
     button[6].setTransferHandler(new TransferHandler("icon"));
 }
+     @Override
+    public String toString(){
+       return "salut";
+    }
+   
     
 }

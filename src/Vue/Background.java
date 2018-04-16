@@ -18,12 +18,7 @@ public abstract class Background extends JPanel{
         setLayout(null);
         setSize(650, 750);      
     }
-    public String toString(){
-        String Prob="";
-        System.out.println("y0");
-        return Prob;
-                
-    }
+    
     abstract void init();
 
  

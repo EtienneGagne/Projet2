@@ -62,4 +62,8 @@ JButton btnUn = new JButton();
         button[5].setBounds(380, 600, 100, 75);
         button[5].setTransferHandler(new TransferHandler("icon"));
     }
+    @Override
+    public String toString() {
+        return "Calculez la capacité du condensateur manquant pour que la capacité équivalente soit 1,25 µF.";
+    }
 }

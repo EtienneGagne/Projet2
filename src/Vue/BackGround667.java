@@ -70,5 +70,10 @@ JButton btnUn=new JButton();
   
   
 }
+    @Override
+    public String toString() {
+        return "Calculez la valeur de R et la f.é.m. de la pile.";
+    }
+    
     
 }
