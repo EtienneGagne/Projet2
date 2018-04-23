@@ -308,19 +308,18 @@ public class Fenetre extends JFrame implements Observer {
                 int input = (int) JOptionPane.showInputDialog(null,
                         "Choisissez un niveau : ", "Niveaux",
                         JOptionPane.QUESTION_MESSAGE, null, niveaux, niveaux[0]);
+                
+                nombreNiveau = input;
+                lblNiveau.setText("Niveau : " + nombreNiveau + "\n");
 
                 if (backgroundActuel != null) {
                     pnlJeu.remove(backgroundActuel);
                 }
                 backgroundActuel = backgrounds[input - 1];
                 pnlJeu.add(backgroundActuel, BorderLayout.CENTER);
-//                System.out.println(backgroundActuel.toString());
                 probleme = backgroundActuel.toString();
                 lblEnoncer.setText("Énoncé du problème : " + probleme);
                 lblEnoncer.setLineWrap(true);
-
-                System.out.println(probleme);
-//                lblEnoncer.revalidate();
 
                 pnlJeu.revalidate();
                 pnlJeu.repaint();
