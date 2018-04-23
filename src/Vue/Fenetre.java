@@ -318,7 +318,7 @@ public class Fenetre extends JFrame implements Observer {
                 backgroundActuel = backgrounds[input - 1];
                 pnlJeu.add(backgroundActuel, BorderLayout.CENTER);
                 probleme = backgroundActuel.toString();
-                lblEnoncer.setText("Énoncé du problème : " + probleme);
+                lblEnoncer.setText("Énoncé du problème : " + "\n" + probleme);
                 lblEnoncer.setLineWrap(true);
 
                 pnlJeu.revalidate();
