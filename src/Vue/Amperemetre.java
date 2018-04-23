@@ -1,4 +1,3 @@
-
 package Vue;
 
 import java.awt.Image;
@@ -6,20 +5,17 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
-
 public class Amperemetre extends ImageIcon {
-static Image imageAmperemetre = Toolkit.getDefaultToolkit().getImage("composantes/amperemetreps.png");
+
+    protected static Image imageAmperemetre04 = Toolkit.getDefaultToolkit().getImage("composantes/amperemetreps0.4.png");
+    protected static Image imageAmperemetre3m = Toolkit.getDefaultToolkit().getImage("composantes/amperemetreps3m.png");
 
     public Amperemetre() {
-        super(imageAmperemetre);
+        super(imageAmperemetre04);
     }
 
-   public Image getImg(){
-       return imageAmperemetre;
-   }
+    public Amperemetre(int a) {
+        super(imageAmperemetre3m);
+    }
 
-    
-
-  
-    
 }
