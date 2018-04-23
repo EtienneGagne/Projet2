@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
@@ -17,7 +18,7 @@ JButton btnUn=new JButton();
     JButton btnQuatre=new JButton();
     JButton btnCinq=new JButton();
     JButton btnSix=new JButton();
-    
+   String nL1 = System.getProperty("line.separator"); // pour 1 interligne
     
     Image image667 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.67.png");
     JButton button[] = new JButton[6];   
@@ -72,7 +73,10 @@ JButton btnUn=new JButton();
 }
     @Override
     public String toString() {
-        return "Calculez la valeur de R et la f.é.m. de la pile.";
+        return "Soit la puissance de R2,P2=2,40 W, et I=18.5 mA"
+                + "A)Déterminez la résistance R2."
+                + "B)Déterminez C1, sachant que P1=222 µC."
+                + "C)Trouvez la f.é.m.";
     }
     
     

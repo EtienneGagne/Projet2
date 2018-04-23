@@ -64,6 +64,7 @@ public class BackGround639 extends Background {
     }
     @Override
     public String toString() {
-        return "";
+        return "A)Trouvez les bonnes valeurs des résistances."
+                + "B) Si τ=0,9s , et que l'interrupteur est fermé,trouvez la valeur du condensateur manquant.";
     }
 }

@@ -64,6 +64,9 @@ JButton btnUn = new JButton();
     }
     @Override
     public String toString() {
-        return "Calculez la capacité du condensateur manquant pour que la capacité équivalente soit 1,25 µF.";
+        return "Une fois le condensateur q1 chargé (240µc) et le q2 (360µc), "
+                + "A)Quel est la capacité du condensateur C1."
+                + "B)Trouvez la valeur du f.é.m."
+                + "C)Trouvez R1 sachant que le tau du circuit est 6 ms.";
     }
 }

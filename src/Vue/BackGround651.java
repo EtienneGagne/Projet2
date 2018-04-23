@@ -68,7 +68,9 @@ public class BackGround651 extends Background  {
 }
     @Override
     public String toString() {
-        return "Calculez la valeur de R et la f.é.m. de la pile.";
+        return "Le voltmètre idéal indique 6,00 V et l'ampèremètre idéal, 3,00 mA."
+                + "A)Trouvez la valeur de la résistance manquante."
+                + "B)Trouvez la f.é.m. de la pile.";
     }
     
 }

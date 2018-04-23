@@ -79,6 +79,8 @@ public class BackGround632 extends Background  {
 }
     @Override
     public String toString() {
-        return "";
+        return "L'intensité de la branche du haut I1=2,88A, l'intensité I2=-0,416A et I3=3,30 A."
+                + "A)Trouvez la valeur de la résistance inconnu à l'aide des bandes de couleurs."
+                + "B) trouvez les deux valeurs de piles manquantes.";
     }
 }
