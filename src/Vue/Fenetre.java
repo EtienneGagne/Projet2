@@ -32,7 +32,7 @@ public class Fenetre extends JFrame implements Observer {
     private Background backgroundActuel;
     
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
-    private JPanel pnlCarre = new JPanel(new GridLayout(10, 2));
+    private JPanel pnlCarre = new JPanel(new GridLayout(30, 1));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
@@ -65,13 +65,42 @@ public class Fenetre extends JFrame implements Observer {
     private InterrupteurO interrupteurO = new InterrupteurO();
     private InterrupteurF interrupteurF = new InterrupteurF();
     private Pile pile = new Pile();
-    private Resistance resistance = new Resistance();
-    private Voltmetre voltmetre = new Voltmetre();
+    private Resistance resistance1 = new Resistance  ();
+    private Resistance resistance2 = new Resistance  (1);
+    private Resistance resistance2k = new Resistance (1,1);
+    private Resistance resistance3 = new Resistance  (1,1,1);
+    private Resistance resistance3k = new Resistance (1,1,1,1);
+    private Resistance resistance4 = new Resistance  (1,1,1,1,1);
+    private Resistance resistance4k = new Resistance (1,1,1,1,1,1);
+    private Resistance resistance5 = new Resistance  (1,1,1,1,1,1,1);
+    private Resistance resistance6 = new Resistance  (1,1,1,1,1,1,1,1);
+    private Resistance resistance7 = new Resistance  (1,1,1,1,1,1,1,1,1);
+    private Resistance resistance7k = new Resistance (1,1,1,1,1,1,1,1,1,1);
+    private Resistance resistance8 = new Resistance  (1,1,1,1,1,1,1,1,1,1,1);
+    private Resistance resistance10 = new Resistance (1,1,1,1,1,1,1,1,1,1,1,1);
+    private Resistance resistance10k = new Resistance(1,1,1,1,1,1,1,1,1,1,1,1,1);
+    private Resistance resistance11 = new Resistance (1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+    private Resistance resistance50k = new Resistance(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+    
+    private Voltmetre voltmetre15 = new Voltmetre();
+    private Voltmetre voltmetre6 = new Voltmetre(1);
 
-    private JLabel composantes[] = {new JLabel(amperemetre),
-        new JLabel(ampoule), new JLabel(bobine), new JLabel(condensateur),
-        new JLabel(interrupteurO), new JLabel(interrupteurF),
-        new JLabel(pile), new JLabel(resistance), new JLabel(voltmetre)};
+    private JLabel composantes[] = {
+        new JLabel(amperemetre),
+        new JLabel(ampoule), 
+        new JLabel(bobine),
+        new JLabel(condensateur),
+        new JLabel(interrupteurO),
+        new JLabel(interrupteurF),
+        new JLabel(pile),
+        new JLabel(resistance1), new JLabel(resistance2),
+        new JLabel(resistance2k), new JLabel(resistance3), new JLabel(resistance3k), 
+        new JLabel(resistance4), new JLabel(resistance4k), new JLabel(resistance5), 
+        new JLabel(resistance6), new JLabel(resistance7), new JLabel(resistance7k),
+        new JLabel(resistance8), new JLabel(resistance10), new JLabel(resistance10k), 
+        new JLabel(resistance11), new JLabel(resistance50k), 
+        new JLabel(voltmetre15),new JLabel(voltmetre6)
+    };
     
     Timer timer = new Timer(1000, new ActionListener() {
         @Override
