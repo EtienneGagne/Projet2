@@ -4,12 +4,12 @@ package Vue;
 import java.awt.Image;
 
 import java.awt.Toolkit;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 
 public class Amperemetre extends ImageIcon {
 static Image imageAmperemetre = Toolkit.getDefaultToolkit().getImage("composantes/amperemetreps.png");
+
     public Amperemetre() {
         super(imageAmperemetre);
     }

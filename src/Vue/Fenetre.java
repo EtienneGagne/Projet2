@@ -2,6 +2,7 @@ package Vue;
 
 import Modele.Modele;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -39,7 +40,7 @@ public class Fenetre extends JFrame implements Observer {
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
 
     private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
-    private JLabel lblEnoncer = new JLabel("Énoncé du problème : " + probleme);
+    private JTextArea lblEnoncer = new JTextArea();
     
     private JLabel lblChrono = new JLabel("     00:00      ");
     private JLabel lblPoint = new JLabel(nombrePoint + " points     ");
@@ -138,16 +139,21 @@ public class Fenetre extends JFrame implements Observer {
         add(pnlPrincipal);
         pnlPrincipal.add(pnlJeu, BorderLayout.EAST);
         pnlPrincipal.add(pnlCarre, BorderLayout.WEST);
+        
+        pnlCarre.setBackground(Color.WHITE);
 
         pnlJeu.setPreferredSize(new Dimension(700, 900));
+        pnlJeu.setBackground(Color.WHITE);
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
         pnlNiveau.add(lblEnoncer, BorderLayout.SOUTH);
+        pnlNiveau.setBackground(Color.WHITE);
 
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
         pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
+        pnlChronoPoint.setBackground(Color.WHITE);
 
         for (JLabel composante : composantes) {
             pnlCarre.add(composante);
@@ -296,6 +302,7 @@ public class Fenetre extends JFrame implements Observer {
 //                System.out.println(backgroundActuel.toString());
                 probleme=backgroundActuel.toString();
                 lblEnoncer.setText("Énoncé du problème : " + probleme);
+                lblEnoncer.setLineWrap(true);
                 
                 System.out.println(probleme);
 //                lblEnoncer.revalidate();

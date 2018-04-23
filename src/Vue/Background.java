@@ -5,7 +5,6 @@
  */
 package Vue;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -16,7 +15,7 @@ public abstract class Background extends JPanel{
   
     public Background() {
         setLayout(null);
-        setSize(650, 750);      
+        
     }
     
     abstract void init();

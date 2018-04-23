@@ -3,9 +3,7 @@ package Vue;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
 public class BackGround619 extends Background {
@@ -62,7 +60,7 @@ public class BackGround619 extends Background {
     }
      @Override
     public String toString() {
-        return "a)Dans le circuit suivant, la résistance équivalente est 4,13Ω. Trouvez la valeur de R."
-                + "b)L'intensité de la résistance de 2Ω est de 1,94 A. Trouvez le potentiel de la pile.";
+        return "a) Dans le circuit suivant, la résistance équivalente est 4,13 Ω. Trouvez la valeur de R."+"\n"
+                + "b) L'intensité de la résistance de 2Ω est de 1,94 A. Trouvez le potentiel de la pile.";
     }
 }
