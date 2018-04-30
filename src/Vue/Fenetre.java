@@ -1,6 +1,5 @@
 package Vue;
 
-import Modele.Modele;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -14,7 +13,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -147,11 +145,7 @@ public class Fenetre extends JFrame {
 
     });
 
-    /**
-     *
-     * @param modele
-     */
-    public Fenetre(Modele modele) {
+    public Fenetre() {
 
         setTitle("circuitAEC");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
