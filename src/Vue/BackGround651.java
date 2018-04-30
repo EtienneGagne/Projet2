@@ -10,11 +10,15 @@ import javax.swing.TransferHandler;
 
 
 public class BackGround651 extends Background  {
-     JButton btnUn=new JButton();
-    JButton btnDeux=new JButton();
-    JButton btnTrois=new JButton();
-    JButton btnQuatre=new JButton();
-    JButton btnCinq=new JButton();
+    private Voltmetre voltmetre6 = new Voltmetre(1);
+    private Amperemetre amperemetre3m = new Amperemetre(1);
+     private Resistance resistance3k = new Resistance(1, 1, 1, 1);
+     
+    final JButton btnUn=new JButton(voltmetre6);
+    JButton btnDeux=new JButton("R");
+    final JButton btnTrois=new JButton(amperemetre3m);
+    JButton btnQuatre=new JButton("Fem");
+    final JButton btnCinq=new JButton(resistance3k);
  
     
     Image image651 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.51.png");
@@ -68,8 +72,8 @@ public class BackGround651 extends Background  {
 }
     @Override
     public String toString() {
-        return "Le voltmètre idéal indique 6,00 V et l'ampèremètre idéal, 3,00 mA."
-                + "A)Trouvez la valeur de la résistance manquante."
+        return "Le voltmètre idéal indique 6,00 V et l'ampèremètre idéal, 3,00 mA."+"\n"
+                + "A)Trouvez la valeur de la résistance manquante."+"\n"
                 + "B)Trouvez la f.é.m. de la pile.";
     }
     

@@ -10,13 +10,15 @@ import javax.swing.TransferHandler;
 
 
 public class BackGround661 extends Background {
+     private Resistance resistance3k = new Resistance(1, 1, 1, 1);
+     private Condensateur condensateur3 = new Condensateur(1);
      
-JButton btnUn = new JButton();
-    JButton btnDeux = new JButton();
-    JButton btnTrois = new JButton();
-    JButton btnQuatre = new JButton();
-    JButton btnCinq = new JButton();
-    JButton btnSix = new JButton();
+    JButton btnUn = new JButton("R1");
+    JButton btnDeux = new JButton("C1");
+    JButton btnTrois = new JButton(resistance3k);
+    JButton btnQuatre = new JButton(condensateur3);
+    JButton btnCinq = new JButton("5");
+    JButton btnSix = new JButton("6");
 
     Image image661 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.61.png");
     JButton button[] = new JButton[6];
