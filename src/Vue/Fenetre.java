@@ -32,7 +32,7 @@ public class Fenetre extends JFrame implements Observer {
     private Background backgroundActuel;
 
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
-    private JPanel pnlCarre = new JPanel(new GridLayout(38, 1));
+    private JPanel pnlCarre = new JPanel(new GridLayout(47, 1));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
@@ -94,15 +94,15 @@ public class Fenetre extends JFrame implements Observer {
     private Resistance resistance10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance50k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur2k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur3k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur4k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur7k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur100K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur2k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur3k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur4k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur7k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur100K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
     private Voltmetre voltmetre15 = new Voltmetre();
     private Voltmetre voltmetre6 = new Voltmetre(1);
@@ -124,7 +124,10 @@ public class Fenetre extends JFrame implements Observer {
         new JLabel(resistance6), new JLabel(resistance7), new JLabel(resistance7k),
         new JLabel(resistance8), new JLabel(resistance10), new JLabel(resistance10k),
         new JLabel(resistance11), new JLabel(resistance50k),
-        new JLabel(voltmetre15), new JLabel(voltmetre6)
+        new JLabel(voltmetre15), new JLabel(voltmetre6), new JLabel(ResistanceCouleur2k), 
+        new JLabel(ResistanceCouleur3k), new JLabel(ResistanceCouleur4k), new JLabel(ResistanceCouleur7k),
+        new JLabel(ResistanceCouleur10k), new JLabel(ResistanceCouleur10), new JLabel(ResistanceCouleur11),
+         new JLabel(ResistanceCouleur50K), new JLabel(ResistanceCouleur100K)
     };
 
     Timer timer = new Timer(1000, new ActionListener() {
@@ -236,8 +239,6 @@ public class Fenetre extends JFrame implements Observer {
                 creerNiveaux();
                 timer.stop();
                 chrono = 0;
-//            	finDePartie();
-//            	modele.reset();
             }
         });
 

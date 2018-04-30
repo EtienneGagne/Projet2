@@ -23,15 +23,15 @@ public class Resistance extends ImageIcon {
     protected static Image imageResistance11 = Toolkit.getDefaultToolkit().getImage("composantes/resistanceps11.png");
     protected static Image imageResistance50k = Toolkit.getDefaultToolkit().getImage("composantes/resistanceps50k.png");
     
-    protected static Image ResistanceCouleur2k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance2Kohm.png");
-    protected static Image ResistanceCouleur3k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance3Kohm.png");
-    protected static Image ResistanceCouleur4k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance4Kohm.png");
-    protected static Image ResistanceCouleur7k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance7Kohm.png");
-    protected static Image ResistanceCouleur10k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance10Kohm.png");
-    protected static Image ResistanceCouleur10 = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance10ohm.png");
-    protected static Image ResistanceCouleur11 = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance11ohm.png");
-    protected static Image ResistanceCouleur50k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance50Kohm.png");
-    protected static Image ResistanceCouleur100k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance100Kohm.png");
+    protected static Image ResistanceCouleur2k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance2Kohm.png");
+    protected static Image ResistanceCouleur3k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance3Kohm.png");
+    protected static Image ResistanceCouleur4k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance4Kohm.png");
+    protected static Image ResistanceCouleur7k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance7Kohm.png");
+    protected static Image ResistanceCouleur10k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance10Kohm.png");
+    protected static Image ResistanceCouleur10 = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance10ohm.png");
+    protected static Image ResistanceCouleur11 = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance11ohm.png");
+    protected static Image ResistanceCouleur50k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance50Kohm.png");
+    protected static Image ResistanceCouleur100k = Toolkit.getDefaultToolkit().getImage("ResistancesCouleurs/Resistance100Kohm.png");
 
     public Resistance() {
         super(imageResistance1);
