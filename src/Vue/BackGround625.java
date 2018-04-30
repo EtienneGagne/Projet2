@@ -3,21 +3,25 @@ package Vue;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
 public class BackGround625 extends Background {
-
+    
+    private Resistance resistance6 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1);
+    private Pile pile6 = new Pile(1, 1);
+    private Resistance resistance10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance5 = new Resistance(1, 1, 1, 1, 1, 1, 1);
+    private Pile pile45 = new Pile();
+   
     JButton btnUn = new JButton();
-    JButton btnDeux = new JButton();
-    JButton btnTrois = new JButton();
+    JButton btnDeux = new JButton(resistance6);
+    JButton btnTrois = new JButton(pile6);
     JButton btnQuatre = new JButton();
-    JButton btnCinq = new JButton();
-    JButton btnSix = new JButton();
-    JButton btnSept = new JButton();
-    JButton btnHuit = new JButton();
+    JButton btnCinq = new JButton(resistance10);
+    JButton btnSix = new JButton(resistance5);
+    JButton btnSept = new JButton(pile45);
+    JButton btnHuit = new JButton(resistance6);
 
     Image image625 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.25.png");
     JButton button[] = new JButton[8];
@@ -57,23 +61,23 @@ public class BackGround625 extends Background {
         button[0].setBounds(150, 50, 100, 75);
         button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(350, 50, 100, 75);
-        button[1].setTransferHandler(new TransferHandler("icon"));
+        //button[1].setTransferHandler(new TransferHandler("icon"));
         button[2].setBounds(415, 230, 100, 75);
-        button[2].setTransferHandler(new TransferHandler("icon"));
+        //button[2].setTransferHandler(new TransferHandler("icon"));
         button[3].setBounds(268, 310, 100, 75);
         button[3].setTransferHandler(new TransferHandler("icon"));
         button[4].setBounds(125, 230, 100, 75);
-        button[4].setTransferHandler(new TransferHandler("icon"));
+        //button[4].setTransferHandler(new TransferHandler("icon"));
         button[5].setBounds(115, 425, 100, 75);
-        button[5].setTransferHandler(new TransferHandler("icon"));
+        //button[5].setTransferHandler(new TransferHandler("icon"));
         button[6].setBounds(350, 425, 100, 75);
-        button[6].setTransferHandler(new TransferHandler("icon"));
+        //button[6].setTransferHandler(new TransferHandler("icon"));
         button[7].setBounds(250, 595, 100, 75);
-        button[7].setTransferHandler(new TransferHandler("icon"));
+        //button[7].setTransferHandler(new TransferHandler("icon"));
     }
     @Override
     public String toString() {
-        return "a) Place l'ampèremètre au bonne endroit avec la bonne valeur."
-                + "b) Place le voltmètre au bonne endroit avec la bonne valeur.";
+        return "A) Place l'ampèremètre au bonne endroit avec la bonne valeur affichée sur l'ampèremètre."+"\n"
+                + "B) Place le voltmètre au bonne endroit avec la bonne valeur affichée sur le voltmètre.";
     }
 }

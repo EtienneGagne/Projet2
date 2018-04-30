@@ -94,6 +94,14 @@ public class Fenetre extends JFrame implements Observer {
     private Resistance resistance10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance50k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur2k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur3k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur4k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur7k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
     private Voltmetre voltmetre15 = new Voltmetre();
     private Voltmetre voltmetre6 = new Voltmetre(1);
@@ -164,6 +172,7 @@ public class Fenetre extends JFrame implements Observer {
 
         pnlNiveau.add(lblNiveau, BorderLayout.NORTH);
         pnlNiveau.add(lblEnoncer, BorderLayout.SOUTH);
+        lblEnoncer.setEditable(false);
         pnlNiveau.setBackground(Color.WHITE);
 
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);

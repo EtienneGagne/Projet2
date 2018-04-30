@@ -5,19 +5,19 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
 
 public class BackGround639 extends Background {
+   
      
 
-    JButton btnUn = new JButton();
-    JButton btnDeux = new JButton();
-    JButton btnTrois = new JButton();
-    JButton btnQuatre = new JButton();
-    JButton btnCinq = new JButton();
-    JButton btnSix = new JButton();
+    JButton btnUn = new JButton("1");
+    JButton btnDeux = new JButton("2");
+    JButton btnTrois = new JButton("3");
+    JButton btnQuatre = new JButton("4");
+    JButton btnCinq = new JButton("5");
+    JButton btnSix = new JButton("6");
 
     Image image639 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.39.png");
     JButton button[] = new JButton[6];
@@ -64,7 +64,7 @@ public class BackGround639 extends Background {
     }
     @Override
     public String toString() {
-        return "A)Trouvez les bonnes valeurs des résistances."
-                + "B) Si τ=0,9s , et que l'interrupteur est fermé,trouvez la valeur du condensateur manquant.";
+        return "A)Trouvez les bonnes valeurs des résistances."+"\n"
+                + "B) Si τ=0,9s , et que l'interrupteur est fermé,"+"\n"+"trouvez la valeur du condensateur manquant.";
     }
 }

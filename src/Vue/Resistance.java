@@ -22,6 +22,15 @@ public class Resistance extends ImageIcon {
     protected static Image imageResistance10k = Toolkit.getDefaultToolkit().getImage("composantes/resistanceps10k.png");
     protected static Image imageResistance11 = Toolkit.getDefaultToolkit().getImage("composantes/resistanceps11.png");
     protected static Image imageResistance50k = Toolkit.getDefaultToolkit().getImage("composantes/resistanceps50k.png");
+    
+    protected static Image ResistanceCouleur2k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance2Kohm.png");
+    protected static Image ResistanceCouleur3k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance3Kohm.png");
+    protected static Image ResistanceCouleur4k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance4Kohm.png");
+    protected static Image ResistanceCouleur7k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance7Kohm.png");
+    protected static Image ResistanceCouleur10k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance10Kohm.png");
+    protected static Image ResistanceCouleur10 = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance10ohm.png");
+    protected static Image ResistanceCouleur11 = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance11ohm.png");
+    protected static Image ResistanceCouleur50k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance50Kohm.png");
 
     public Resistance() {
         super(imageResistance1);
@@ -85,5 +94,37 @@ public class Resistance extends ImageIcon {
 
     public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o) {
         super(imageResistance50k);
+    }
+    
+    public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p) {
+        super(ResistanceCouleur2k);
+    }
+    
+    public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q) {
+        super(ResistanceCouleur3k);
+    }
+    
+    public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r) {
+        super(ResistanceCouleur4k);
+    }
+    
+    public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s) {
+        super(ResistanceCouleur7k);
+    }
+    
+    public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s, int t) {
+        super(ResistanceCouleur10k);
+    }
+    
+     public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s, int t, int u) {
+        super(ResistanceCouleur10);
+    }
+     
+     public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s, int t, int u, int v) {
+        super(ResistanceCouleur11);
+    }
+     
+     public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s, int t, int u, int v, int w) {
+        super(ResistanceCouleur50k);
     }
 }
