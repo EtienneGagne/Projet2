@@ -68,4 +68,5 @@ public class BackGround619 extends Background {
         return "A) Dans le circuit suivant, la résistance équivalente est 4,13 Ω. Trouvez la valeur de R."+"\n"
                 + "B) L'intensité de la résistance de 2Ω est de 1,94 A. Trouvez le potentiel de la pile.";
     }
+    
 }

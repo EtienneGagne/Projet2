@@ -16,7 +16,8 @@ public class Pile extends ImageIcon {
     protected static Image imagePile36 = Toolkit.getDefaultToolkit().getImage("composantes/batterieps36.png");
     protected static Image imagePile90 = Toolkit.getDefaultToolkit().getImage("composantes/batterieps90.png");
     protected static Image imagePile120 = Toolkit.getDefaultToolkit().getImage("composantes/batterieps120.png");
-
+   protected static Image imagePile204 = Toolkit.getDefaultToolkit().getImage("composantes/batterieps204.png");
+   
     public Pile() {
         super(imagePile45);
     }
@@ -55,6 +56,8 @@ public class Pile extends ImageIcon {
     public Pile(int a, int b, int c, int d, int e, int f, int g, int h, int i) {
         super(imagePile120);
     }
-
+   public Pile(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j) {
+        super(imagePile204);
+    }
 
 }
