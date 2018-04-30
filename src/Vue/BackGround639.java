@@ -3,18 +3,18 @@ package Vue;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.TransferHandler;
 
 
 public class BackGround639 extends Background {
    
-     
+     private Resistance resistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+     private InterrupteurO interrupteurO = new InterrupteurO();
 
-    JButton btnUn = new JButton("1");
-    JButton btnDeux = new JButton("2");
-    JButton btnTrois = new JButton("3");
+    JButton btnUn = new JButton("pile 10V à ajouter");
+    JButton btnDeux = new JButton(resistanceCouleur50K);
+    JButton btnTrois = new JButton(interrupteurO);
     JButton btnQuatre = new JButton("4");
     JButton btnCinq = new JButton("5");
     JButton btnSix = new JButton("6");

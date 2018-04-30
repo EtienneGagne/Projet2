@@ -102,6 +102,7 @@ public class Fenetre extends JFrame implements Observer {
     private Resistance resistanceCouleur10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistanceCouleur11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistanceCouleur100K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
     private Voltmetre voltmetre15 = new Voltmetre();
     private Voltmetre voltmetre6 = new Voltmetre(1);

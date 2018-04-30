@@ -31,6 +31,7 @@ public class Resistance extends ImageIcon {
     protected static Image ResistanceCouleur10 = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance10ohm.png");
     protected static Image ResistanceCouleur11 = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance11ohm.png");
     protected static Image ResistanceCouleur50k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance50Kohm.png");
+    protected static Image ResistanceCouleur100k = Toolkit.getDefaultToolkit().getImage("RésistancesCouleurs/Resistance100Kohm.png");
 
     public Resistance() {
         super(imageResistance1);
@@ -126,5 +127,9 @@ public class Resistance extends ImageIcon {
      
      public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s, int t, int u, int v, int w) {
         super(ResistanceCouleur50k);
+    }
+     
+     public Resistance(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p,int q, int r, int s, int t, int u, int v, int w, int x) {
+        super(ResistanceCouleur100k);
     }
 }
