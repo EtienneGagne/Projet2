@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
+/**
+ *
+ * @author 1637157
+ */
 public class BackGround667 extends Background {
 
     private InterrupteurF interrupteurF = new InterrupteurF();
@@ -26,6 +30,9 @@ public class BackGround667 extends Background {
     Image image667 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.67.png");
     JButton button[] = new JButton[6];
 
+    /**
+     *
+     */
     public BackGround667() {
         super();
         init();
@@ -39,6 +46,9 @@ public class BackGround667 extends Background {
 
     }
 
+    /**
+     *
+     */
     public void init() {
         button[0] = btnUn;
         button[1] = btnDeux;

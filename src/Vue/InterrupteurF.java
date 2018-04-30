@@ -16,6 +16,10 @@ import javax.swing.ImageIcon;
 
 public class InterrupteurF extends ImageIcon {
 static Image imageInterrupteurF = Toolkit.getDefaultToolkit().getImage("composantes/interrupteur-fermeps.png");
+
+    /**
+     *
+     */
     public InterrupteurF() {
         super(imageInterrupteurF);
         

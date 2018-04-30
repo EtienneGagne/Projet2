@@ -6,6 +6,10 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.TransferHandler;
 
+/**
+ *
+ * @author 1637157
+ */
 public class BackGround419 extends Background {
 
     private Condensateur condensateur3 = new Condensateur(1);
@@ -22,6 +26,9 @@ public class BackGround419 extends Background {
     Image image419 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/4.19.png");
     JButton button[] = new JButton[5];
 
+    /**
+     *
+     */
     public BackGround419() {
         super();
         init();
@@ -35,6 +42,9 @@ public class BackGround419 extends Background {
 
     }
 
+    /**
+     *
+     */
     public void init() {
         button[0] = btnUn;
         button[1] = btnDeux;

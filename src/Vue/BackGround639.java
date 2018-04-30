@@ -7,7 +7,10 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.TransferHandler;
 
-
+/**
+ *
+ * @author 1637157
+ */
 public class BackGround639 extends Background {
     
      private Pile pile10 = new Pile(1, 1, 1, 1);
@@ -24,6 +27,9 @@ public class BackGround639 extends Background {
     Image image639 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.39.png");
     JButton button[] = new JButton[6];
     
+    /**
+     *
+     */
     public BackGround639() {
         super();
         init();
@@ -37,7 +43,9 @@ public class BackGround639 extends Background {
 
     }
 
-
+    /**
+     *
+     */
     public void init() {
         button[0] = btnUn;
         button[1] = btnDeux;

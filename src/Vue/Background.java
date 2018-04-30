@@ -13,6 +13,9 @@ import javax.swing.JPanel;
  */
 public abstract class Background extends JPanel{
   
+    /**
+     *
+     */
     public Background() {
         setLayout(null);
         

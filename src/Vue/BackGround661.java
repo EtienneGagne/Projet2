@@ -8,7 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
-
+/**
+ *
+ * @author 1637157
+ */
 public class BackGround661 extends Background {
      private Resistance resistance3k = new Resistance(1, 1, 1, 1);
      private Condensateur condensateur3 = new Condensateur(1);
@@ -24,6 +27,9 @@ public class BackGround661 extends Background {
     Image image661 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.61.png");
     JButton button[] = new JButton[6];
     
+    /**
+     *
+     */
     public BackGround661() {
         super();
         init();
@@ -37,7 +43,9 @@ public class BackGround661 extends Background {
 
     }
 
-
+    /**
+     *
+     */
     public void init() {
         button[0] = btnUn;
         button[1] = btnDeux;

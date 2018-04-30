@@ -14,6 +14,10 @@ import java.util.Observable;
 public class Modele  extends Observable{
       private int nombrePoint=0;
     private int nombreNiveau=0;
+
+    /**
+     *
+     */
     public void reset() {
         
     	setChanged();
@@ -21,18 +25,34 @@ public class Modele  extends Observable{
         
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNombreNiveau() {
         return nombreNiveau;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNombrePoint() {
         return nombrePoint;
     }
 
+    /**
+     *
+     * @param nombreNiveau
+     */
     public void setNombreNiveau(int nombreNiveau) {
         this.nombreNiveau = nombreNiveau++;
     }
 
+    /**
+     *
+     * @param nombrePoint
+     */
     public void setNombrePoint(int nombrePoint) {
         this.nombrePoint = nombrePoint++;
     }

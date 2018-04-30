@@ -8,7 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
 
-
+/**
+ *
+ * @author 1637157
+ */
 public class BackGround651 extends Background  {
     private Voltmetre voltmetre6 = new Voltmetre(1);
     private Amperemetre amperemetre3m = new Amperemetre(1);
@@ -24,6 +27,9 @@ public class BackGround651 extends Background  {
     Image image651 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.51.png");
     JButton button[] = new JButton[5];   
     
+    /**
+     *
+     */
     public BackGround651() {
         super();
         init();
@@ -37,7 +43,9 @@ public class BackGround651 extends Background  {
 
     }
 
-    
+    /**
+     *
+     */
     public void init() {
         button[0]=btnUn;
         button[1]=btnDeux;

@@ -11,6 +11,9 @@ package Vue;
  */
 public class Monde {
 
+    /**
+     *
+     */
     public Monde() {
     }
     

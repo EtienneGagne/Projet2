@@ -16,7 +16,11 @@ public class Controleur {
     private Fenetre vue;
     private Modele modele;
 
-
+    /**
+     *
+     * @param vue
+     * @param modele
+     */
     public Controleur(Fenetre vue, Modele modele) {
         this.vue = vue;
         this.modele = modele;

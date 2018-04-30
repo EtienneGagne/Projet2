@@ -6,6 +6,10 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.TransferHandler;
 
+/**
+ *
+ * @author 1637157
+ */
 public class BackGround625 extends Background {
     
     private Resistance resistance6 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1);
@@ -26,6 +30,9 @@ public class BackGround625 extends Background {
     Image image625 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.25.png");
     JButton button[] = new JButton[8];
     
+    /**
+     *
+     */
     public BackGround625() {
         super();
         init();
@@ -39,7 +46,9 @@ public class BackGround625 extends Background {
 
     }
 
-
+    /**
+     *
+     */
     public void init() {
         button[0] = btnUn;
         button[1] = btnDeux;
