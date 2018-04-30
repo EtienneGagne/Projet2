@@ -15,12 +15,11 @@ import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Observable;
-import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-public class Fenetre extends JFrame implements Observer {
+public class Fenetre extends JFrame {
 
     private int nombrePoint = 0;
     private int nombreNiveau = 0;
@@ -93,16 +92,16 @@ public class Fenetre extends JFrame implements Observer {
     private Resistance resistance10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance50k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur2k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur3k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur4k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur7k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance50k =        new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur2k =  new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur3k =  new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur4k =  new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur7k =  new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance ResistanceCouleur10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance ResistanceCouleur100K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur10 =  new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur11 =  new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance ResistanceCouleur100K =new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
     private Voltmetre voltmetre15 = new Voltmetre();
     private Voltmetre voltmetre6 = new Voltmetre(1);
@@ -142,10 +141,6 @@ public class Fenetre extends JFrame implements Observer {
     });
 
     public Fenetre(Modele modele) {
-        modele.addObserver(this);
-
-        //this.modele = modele;
-        modele.addObserver(this);
 
         setTitle("circuitAEC");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -369,16 +364,6 @@ public class Fenetre extends JFrame implements Observer {
 
     public int getNombrePoint() {
         return nombrePoint;
-    }
-
-    @Override
-    public void update(Observable o, Object o1) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
     }
 
 }

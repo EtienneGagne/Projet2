@@ -9,11 +9,11 @@ import javax.swing.TransferHandler;
 
 public class BackGround639 extends Background {
    
-     private Resistance resistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+     private Resistance ResistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
      private InterrupteurO interrupteurO = new InterrupteurO();
 
     JButton btnUn = new JButton("pile 10V à ajouter");
-    final JButton btnDeux = new JButton(resistanceCouleur50K);
+    final JButton btnDeux = new JButton(ResistanceCouleur50K);
     final JButton btnTrois = new JButton(interrupteurO);
     JButton btnQuatre = new JButton("4");
     JButton btnCinq = new JButton("5");
