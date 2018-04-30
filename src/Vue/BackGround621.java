@@ -8,13 +8,20 @@ import javax.swing.TransferHandler;
 
 
 public class BackGround621 extends Background  { 
-    JButton btnUn=new JButton();
-    JButton btnDeux=new JButton();
-    JButton btnTrois=new JButton();
-    JButton btnQuatre=new JButton();
-    JButton btnCinq=new JButton();
-    JButton btnSix=new JButton();
-    JButton btnSept=new JButton();
+    
+      private Resistance resistance1 = new Resistance();
+       private Resistance resistance5 = new Resistance(1, 1, 1, 1, 1, 1, 1);
+        private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+         private Pile pile4 = new Pile(1);
+         private Condensateur condensateur2 = new Condensateur();
+         
+    JButton btnUn=new JButton("R1");
+    final JButton btnDeux=new JButton(pile4);
+    final JButton btnTrois=new JButton(resistance1);
+    final JButton btnQuatre=new JButton(resistance5);
+    JButton btnCinq=new JButton("R2");
+    final JButton btnSix=new JButton(resistance1);
+    final JButton btnSept=new JButton(condensateur2);
     String enonceProbleme;
     
     
@@ -69,10 +76,10 @@ public class BackGround621 extends Background  {
 }
      @Override
     public String toString() {
-        return "a) Au temps t=0, calculez les résistances manquantes si "
-                + "la résistance équivalente de R1 et la résistance de 1 Ohm est "
-                + "de 12 Omh et que la résistance équivalente du circuit est de 0.375 ohm."
-                + "b) Une fois que le condensateur est plein, qu'elle est la résisante équivalente du circuit. ";
+        return "A) Au temps t=0, calculez les résistances manquantes si "
+                + "la résistance équivalente de la branche du bas est "+"\n"
+                + "de 12 Omh et que la résistance équivalente du circuit est de 0.375 ohm."+"\n"
+                + "B) Une fois que le condensateur est plein, qu'elle est la résisante équivalente du circuit. ";
     }
    
     

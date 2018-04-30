@@ -13,8 +13,8 @@ public class BackGround639 extends Background {
      private InterrupteurO interrupteurO = new InterrupteurO();
 
     JButton btnUn = new JButton("pile 10V à ajouter");
-    JButton btnDeux = new JButton(resistanceCouleur50K);
-    JButton btnTrois = new JButton(interrupteurO);
+    final JButton btnDeux = new JButton(resistanceCouleur50K);
+    final JButton btnTrois = new JButton(interrupteurO);
     JButton btnQuatre = new JButton("4");
     JButton btnCinq = new JButton("5");
     JButton btnSix = new JButton("6");

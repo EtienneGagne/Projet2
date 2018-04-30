@@ -15,13 +15,13 @@ public class BackGround625 extends Background {
     private Pile pile45 = new Pile();
    
     JButton btnUn = new JButton();
-    JButton btnDeux = new JButton(resistance6);
-    JButton btnTrois = new JButton(pile6);
+    final JButton btnDeux = new JButton(resistance6);
+    final JButton btnTrois = new JButton(pile6);
     JButton btnQuatre = new JButton();
-    JButton btnCinq = new JButton(resistance10);
-    JButton btnSix = new JButton(resistance5);
-    JButton btnSept = new JButton(pile45);
-    JButton btnHuit = new JButton(resistance6);
+    final JButton btnCinq = new JButton(resistance10);
+    final JButton btnSix = new JButton(resistance5);
+    final JButton btnSept = new JButton(pile45);
+    final JButton btnHuit = new JButton(resistance6);
 
     Image image625 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.25.png");
     JButton button[] = new JButton[8];

@@ -15,9 +15,9 @@ public class BackGround419 extends Background {
     
     final JButton btnUn = new JButton(condensateur3);
     JButton btnDeux = new JButton();
-    JButton btnTrois = new JButton(condensateur2);
-    JButton btnQuatre = new JButton(condensateur4);
-    JButton btnCinq = new JButton(pile90);
+    final JButton btnTrois = new JButton(condensateur2);
+    final JButton btnQuatre = new JButton(condensateur4);
+    final JButton btnCinq = new JButton(pile90);
 
     Image image419 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/4.19.png");
     JButton button[] = new JButton[5];

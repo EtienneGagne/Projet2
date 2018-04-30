@@ -13,11 +13,11 @@ public class BackGround619 extends Background {
     private Resistance resistance5 = new Resistance (1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance4 = new Resistance (1, 1, 1, 1, 1);
 
-    JButton btnUn = new JButton(resistance10);
-    JButton btnDeux = new JButton(resistance5);
-    JButton btnTrois = new JButton(resistance4);
+    final JButton btnUn = new JButton(resistance10);
+    final JButton btnDeux = new JButton(resistance5);
+    final JButton btnTrois = new JButton(resistance4);
     JButton btnQuatre = new JButton(" R ");
-    JButton btnCinq = new JButton(resistance2);
+    final JButton btnCinq = new JButton(resistance2);
     JButton btnSix = new JButton();
 
     Image image619 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.19.png");

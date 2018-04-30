@@ -12,13 +12,14 @@ import javax.swing.TransferHandler;
 public class BackGround661 extends Background {
      private Resistance resistance3k = new Resistance(1, 1, 1, 1);
      private Condensateur condensateur3 = new Condensateur(1);
+     private InterrupteurF interrupteurF = new InterrupteurF();
      
     JButton btnUn = new JButton("R1");
     JButton btnDeux = new JButton("C1");
-    JButton btnTrois = new JButton(resistance3k);
-    JButton btnQuatre = new JButton(condensateur3);
-    JButton btnCinq = new JButton("5");
-    JButton btnSix = new JButton("6");
+    final JButton btnTrois = new JButton(resistance3k);
+    final JButton btnQuatre = new JButton(condensateur3);
+    final JButton btnCinq = new JButton(interrupteurF);
+    JButton btnSix = new JButton("F.e.m");
 
     Image image661 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.61.png");
     JButton button[] = new JButton[6];
@@ -66,9 +67,9 @@ public class BackGround661 extends Background {
     }
     @Override
     public String toString() {
-        return "Une fois le condensateur q1 chargé (240µc) et le q2 (360µc), "
-                + "A)Quel est la capacité du condensateur C1."
-                + "B)Trouvez la valeur du f.é.m."
+        return "Une fois le condensateur q1 chargé (240µc) et le q2 (360µc): "
+                + "A)Quel est la capacité du condensateur C1."+"\n"
+                + "B)Trouvez la valeur du f.é.m."+"\n"
                 + "C)Trouvez R1 sachant que le tau du circuit est 6 ms.";
     }
 }
