@@ -16,14 +16,12 @@ public class BackGround621 extends Background  {
          private Condensateur condensateur2 = new Condensateur();
          
     JButton btnUn=new JButton("R1");
-    final JButton btnDeux=new JButton(pile4);
-    final JButton btnTrois=new JButton(resistance1);
-    final JButton btnQuatre=new JButton(resistance5);
+    JButton btnDeux=new JButton(pile4);
+    JButton btnTrois=new JButton(resistance1);
+    JButton btnQuatre=new JButton(resistance5);
     JButton btnCinq=new JButton("R2");
-    final JButton btnSix=new JButton(resistance1);
-    final JButton btnSept=new JButton(condensateur2);
-    String enonceProbleme;
-    
+    JButton btnSix=new JButton(resistance1);
+    JButton btnSept=new JButton(condensateur2);
     
     Image image621 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.21.png");
     JButton button[] = new JButton[7];   
@@ -62,17 +60,17 @@ public class BackGround621 extends Background  {
     button[0].setBounds(260,50,100,75);
     button[0].setTransferHandler(new TransferHandler("icon"));
     button[1].setBounds(120,230,100,75);
-    button[1].setTransferHandler(new TransferHandler("icon"));
+    //button[1].setTransferHandler(new TransferHandler("icon"));
     button[2].setBounds(260,230,100,75);
-    button[2].setTransferHandler(new TransferHandler("icon"));
+    //button[2].setTransferHandler(new TransferHandler("icon"));
     button[3].setBounds(400,230,100,75);
-    button[3].setTransferHandler(new TransferHandler("icon"));
+    //button[3].setTransferHandler(new TransferHandler("icon"));
     button[4].setBounds(120,600,100,75);
     button[4].setTransferHandler(new TransferHandler("icon"));
     button[5].setBounds(260,600,100,75);
-    button[5].setTransferHandler(new TransferHandler("icon"));
+   // button[5].setTransferHandler(new TransferHandler("icon"));
     button[6].setBounds(400,600,100,75);
-    button[6].setTransferHandler(new TransferHandler("icon"));
+    //button[6].setTransferHandler(new TransferHandler("icon"));
 }
      @Override
     public String toString() {

@@ -13,12 +13,12 @@ public class BackGround619 extends Background {
     private Resistance resistance5 = new Resistance (1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance4 = new Resistance (1, 1, 1, 1, 1);
 
-    final JButton btnUn = new JButton(resistance10);
-    final JButton btnDeux = new JButton(resistance5);
-    final JButton btnTrois = new JButton(resistance4);
+    JButton btnUn = new JButton(resistance10);
+    JButton btnDeux = new JButton(resistance5);
+    JButton btnTrois = new JButton(resistance4);
     JButton btnQuatre = new JButton(" R ");
-    final JButton btnCinq = new JButton(resistance2);
-    JButton btnSix = new JButton();
+    JButton btnCinq = new JButton(resistance2);
+    JButton btnSix = new JButton("F.e.m");
 
     Image image619 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.19.png");
     JButton button[] = new JButton[6];
@@ -51,16 +51,15 @@ public class BackGround619 extends Background {
         add(button[4]);
         add(button[5]);
         button[0].setBounds(222, 115, 100, 75);
-        button[0].setTransferHandler(new TransferHandler("icon"));
+       // button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(222, 235, 100, 75);
-        button[1].setTransferHandler(new TransferHandler("icon"));
+        //button[1].setTransferHandler(new TransferHandler("icon"));
         button[2].setBounds(365, 175, 100, 75);
-        button[2].setTransferHandler(new TransferHandler("icon"));
+        //button[2].setTransferHandler(new TransferHandler("icon"));
         button[3].setBounds(280, 345, 100, 75);
         button[3].setTransferHandler(new TransferHandler("icon"));
-        button[4].setBounds(70, 275, 100, 75);
+       // button[4].setBounds(70, 275, 100, 75);
         button[4].setTransferHandler(new TransferHandler("icon"));
-        
         button[5].setBounds(250, 590, 100, 75);
         button[5].setTransferHandler(new TransferHandler("icon"));
     }
