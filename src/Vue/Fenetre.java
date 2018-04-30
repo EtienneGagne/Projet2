@@ -31,7 +31,7 @@ public class Fenetre extends JFrame {
     private Background backgroundActuel;
 
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
-    private JPanel pnlCarre = new JPanel(new GridLayout(47, 1));
+    private JPanel pnlCarre = new JPanel(new GridLayout(48, 1));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
@@ -69,14 +69,15 @@ public class Fenetre extends JFrame {
     private InterrupteurO interrupteurO = new InterrupteurO();
     private InterrupteurF interrupteurF = new InterrupteurF();
     private Pile pile45 = new Pile();
-    private Pile pile4 = new Pile(1);
-    private Pile pile6 = new Pile(1, 1);
-    private Pile pile8 = new Pile(1, 1, 1);
-    private Pile pile12 = new Pile(1, 1, 1, 1);
-    private Pile pile18 = new Pile(1, 1, 1, 1, 1);
-    private Pile pile36 = new Pile(1, 1, 1, 1, 1, 1);
-    private Pile pile90 = new Pile(1, 1, 1, 1, 1, 1, 1);
-    private Pile pile120 = new Pile(1, 1, 1, 1, 1, 1, 1, 1);
+    private Pile pile4 = new Pile (1);
+    private Pile pile6 = new Pile (1, 1);
+    private Pile pile8 = new Pile (1, 1, 1);
+    private Pile pile10 = new Pile(1, 1, 1, 1);
+    private Pile pile12 = new Pile(1, 1, 1, 1, 1);
+    private Pile pile18 = new Pile(1, 1, 1, 1, 1, 1);
+    private Pile pile36 = new Pile(1, 1, 1, 1, 1, 1, 1);
+    private Pile pile90 = new Pile(1, 1, 1, 1, 1, 1, 1, 1);
+    private Pile pile120 =new Pile(1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Resistance resistance1 = new Resistance();
     private Resistance resistance2 = new Resistance(1);
     private Resistance resistance2k = new Resistance(1, 1);
@@ -114,7 +115,7 @@ public class Fenetre extends JFrame {
         new JLabel(condensateur6), new JLabel(condensateur10),
         new JLabel(interrupteurO),
         new JLabel(interrupteurF),
-        new JLabel(pile45), new JLabel(pile4), new JLabel(pile6), new JLabel(pile8),
+        new JLabel(pile45), new JLabel(pile4), new JLabel(pile6), new JLabel(pile8),new JLabel(pile10),
         new JLabel(pile12), new JLabel(pile18), new JLabel(pile36), new JLabel(pile90),
         new JLabel(pile120),
         new JLabel(resistance1), new JLabel(resistance2),
