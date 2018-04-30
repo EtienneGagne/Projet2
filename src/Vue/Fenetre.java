@@ -284,9 +284,24 @@ public class Fenetre extends JFrame {
         mnuReponses.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Object reponse = JOptionPane.showInputDialog(null,
+                Integer[] niveaux = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+                int input = (int)JOptionPane.showInputDialog(null,
                         "De quel niveau voulez-vous voir la réponse ?", "Réponses",
-                        JOptionPane.QUESTION_MESSAGE, null, new String[]{"1", "2", "3", "4", "5", "..."}, null);
+                        JOptionPane.QUESTION_MESSAGE, null, niveaux,niveaux[0]);
+                nombreNiveau = input;
+                String rep = null;
+                switch(input){
+                    case 1:rep="6µF";break;
+                    case 2:rep="A)3Ω  \n"+"B)8V";break;
+                    case 3:rep="A)R1=8Ω   R2=11Ω \n"+"B)14Ω";break;
+                    case 4:rep="A)ampèremètre du haut=0,4A \n"+"B)voltmètre du bas=1,5V";break;
+                    case 5:rep="A)11Ω \n"+"B)Haut=18V Bas=36V";break;
+                    case 6:rep="A)R du haut=50kΩ   R du bas=100kΩ \n"+"B)C=10µF";break;
+                    case 7:rep="A)R=2kΩ \n"+"B)ɛ=15V";break;
+                    case 8:rep="A)C=2µF \n"+"B)ɛ=120V \n"+"C)R=2kΩ";break;
+                    case 9:rep="A)7kΩ \n"+"B)3µF \n"+"C)ɛ=204V";break;
+                }
+                JOptionPane.showMessageDialog(null,rep);
 
             }
         });
