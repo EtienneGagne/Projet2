@@ -12,10 +12,10 @@ import javax.swing.TransferHandler;
  */
 public class BackGround625 extends Background {
     
-    private Resistance resistance6 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance6 = new Resistance("6");
     private Pile pile6 = new Pile(1, 1);
-    private Resistance resistance10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance5 = new Resistance(1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance10 = new Resistance("10");
+    private Resistance resistance5 = new Resistance("5");
     private Pile pile45 = new Pile();
    
     JButton btnUn = new JButton();
@@ -89,4 +89,10 @@ public class BackGround625 extends Background {
         return "A) Place l'ampèremètre au bonne endroit avec la bonne valeur affichée sur l'ampèremètre."+"\n"
                 + "B) Place le voltmètre au bonne endroit avec la bonne valeur affichée sur le voltmètre.";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

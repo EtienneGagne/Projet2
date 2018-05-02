@@ -12,9 +12,9 @@ import javax.swing.TransferHandler;
  */
 public class BackGround621 extends Background {
 
-    private Resistance resistance1 = new Resistance();
-    private Resistance resistance5 = new Resistance(1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance1 = new Resistance("1");
+    private Resistance resistance5 = new Resistance("5");
+    private Resistance resistance11 = new Resistance("11");
     private Pile pile4 = new Pile(1);
     private Condensateur condensateur2 = new Condensateur();
 
@@ -88,5 +88,11 @@ public class BackGround621 extends Background {
                 + "de 12 Omh et que la résistance équivalente du circuit est de 0.375 ohm." + "\n"
                 + "B) Une fois que le condensateur est plein, qu'elle est la résisante équivalente du circuit. ";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

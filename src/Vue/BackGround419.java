@@ -75,4 +75,10 @@ public class BackGround419 extends Background {
         return "Calculez la capacité du condensateur manquant pour que la capacité équivalente soit 1,25 µF.";
     }
 
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

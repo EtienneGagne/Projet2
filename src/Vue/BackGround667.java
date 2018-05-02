@@ -14,7 +14,7 @@ public class BackGround667 extends Background {
 
     private InterrupteurF interrupteurF = new InterrupteurF();
     private Condensateur condensateur6 = new Condensateur(1, 1, 1);
-    private Resistance resistance4k = new Resistance(1, 1, 1, 1, 1, 1);
+    private Resistance resistance4k = new Resistance("4K");
 
     JButton btnUn = new JButton("F.e.m");
     JButton btnDeux = new JButton("R2");
@@ -86,5 +86,11 @@ public class BackGround667 extends Background {
                 + "B)Déterminez C1, sachant que P1=222 µC." + "\n"
                 + "C)Trouvez la f.é.m.";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

@@ -13,7 +13,7 @@ import javax.swing.TransferHandler;
 public class BackGround651 extends Background  {
     private Voltmetre voltmetre6 = new Voltmetre(1);
     private Amperemetre amperemetre3m = new Amperemetre(1);
-     private Resistance resistance3k = new Resistance(1, 1, 1, 1);
+    private Resistance resistance3k = new Resistance("3K");
      
     final JButton btnUn=new JButton(voltmetre6);
     JButton btnDeux=new JButton("R");
@@ -82,5 +82,11 @@ public class BackGround651 extends Background  {
                 + "A)Trouvez la valeur de la résistance manquante."+"\n"
                 + "B)Trouvez la f.é.m. de la pile.";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
     
 }

@@ -9,6 +9,8 @@ import javax.swing.ImageIcon;
  * @author 1637157
  */
 public class Condensateur extends ImageIcon {
+	
+	String valeur;
 
     /**
      *
@@ -35,6 +37,15 @@ public class Condensateur extends ImageIcon {
      */
     protected static Image imageCondensateur10 = Toolkit.getDefaultToolkit().getImage("composantes/condensateurps10.png");
 
+	/**
+	*
+	*/
+	public Condensateur(String valeur) {
+		this.valeur = valeur;
+		String nomFichier = "composantes/condensateurps" + valeur + ".png";
+		setImage(Toolkit.getDefaultToolkit().getImage(nomFichier));
+	}
+	
     /**
      *
      */
@@ -80,4 +91,22 @@ public class Condensateur extends ImageIcon {
         super(imageCondensateur10);
     }
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Condensateur other = (Condensateur) obj;
+		if (valeur == null) {
+			if (other.valeur != null)
+				return false;
+		} else if (!valeur.equals(other.valeur))
+			return false;
+		return true;
+	}
+
+    
 }

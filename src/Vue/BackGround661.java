@@ -11,7 +11,7 @@ import javax.swing.TransferHandler;
  * @author 1637157
  */
 public class BackGround661 extends Background {
-     private Resistance resistance3k = new Resistance(1, 1, 1, 1);
+     private Resistance resistance3k = new Resistance("3K");
      private Condensateur condensateur3 = new Condensateur(1);
      private InterrupteurF interrupteurF = new InterrupteurF();
      
@@ -78,4 +78,10 @@ public class BackGround661 extends Background {
                 + "B)Trouvez la valeur du f.é.m."+"\n"
                 + "C)Trouvez R1 sachant que le tau du circuit est 6 ms.";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

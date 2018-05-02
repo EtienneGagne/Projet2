@@ -12,10 +12,10 @@ import javax.swing.TransferHandler;
  */
 public class BackGround619 extends Background {
     
-    private Resistance resistance2 = new Resistance (1);
-    private Resistance resistance10 = new Resistance (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance5 = new Resistance (1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance4 = new Resistance (1, 1, 1, 1, 1);
+    private Resistance resistance2 = new Resistance ("2");
+    private Resistance resistance10 = new Resistance ("10");
+    private Resistance resistance5 = new Resistance ("5");
+    private Resistance resistance4 = new Resistance ("4");
 
     JButton btnUn = new JButton(resistance10);
     JButton btnDeux = new JButton(resistance5);
@@ -78,5 +78,11 @@ public class BackGround619 extends Background {
         return "A) Dans le circuit suivant, la résistance équivalente est 4,13 Ω. Trouvez la valeur de R."+"\n"
                 + "B) L'intensité de la résistance de 2Ω est de 1,94 A. Trouvez le potentiel de la pile.";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
     
 }

@@ -12,11 +12,11 @@ import javax.swing.TransferHandler;
  */
 public class BackGround632 extends Background {
 
-    private Resistance resistance8 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance5 = new Resistance(1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance8 = new Resistance("8");
+    private Resistance resistance5 = new Resistance("5");
+    private Resistance resistance11 = new Resistance("11");
     private Pile pile12 = new Pile(1, 1, 1, 1);
-    private Resistance resistance7 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1);
+    private Resistance resistance7 = new Resistance("7");
     
     final JButton btnUn = new JButton(resistance8);
     JButton btnDeux = new JButton("F.e.m");
@@ -95,4 +95,10 @@ public class BackGround632 extends Background {
                 + "A)Trouvez la valeur de la résistance inconnu à l'aide des bandes de couleurs." + "\n"
                 + "B) trouvez les deux valeurs de piles manquantes.";
     }
+
+	@Override
+	boolean verifier() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

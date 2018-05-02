@@ -1,6 +1,7 @@
 package Vue;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
@@ -24,25 +25,24 @@ import javax.swing.*;
 public class Fenetre extends JFrame {
 
     private int nombrePoint = 0;
-    private int nombreNiveau = 0;
     private long chrono = 0;
     private String probleme = "";
 
     private Background backgrounds[];
-    private Background backgroundActuel;
+    private int niveauActuel = -1;
 
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
-    private JPanel pnlCarre = new JPanel(new GridLayout(49, 1));
+    private JPanel pnlCarre = new JPanel(new GridLayout(50, 1));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
 
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
 
-    private JLabel lblNiveau = new JLabel("Niveau : " + nombreNiveau + "\n");
+    private JLabel lblNiveau = new JLabel("Niveau : " + "\n");
     private JTextArea lblEnoncer = new JTextArea();
 
     private JLabel lblChrono = new JLabel("     00:00      ");
-    private JLabel lblPoint = new JLabel(nombrePoint + " points     ");
+    private JLabel lblPoint = new JLabel(nombrePoint + " points     ", SwingConstants.CENTER);
 
     private JMenuBar monMenu = new JMenuBar();
     private JMenu mnuFichier = new JMenu("Fichier");
@@ -56,7 +56,8 @@ public class Fenetre extends JFrame {
     private JMenuItem mnuRegles = new JMenuItem("Comment jouer ?");
     private JMenuItem mnuApprentissage = new JMenuItem("Apprentissage");
     private JMenuItem mnuChrono = new JMenuItem("Chrono");
-    private JMenuItem mnuLibre = new JMenuItem("Libre");
+    
+    private JButton btnVerifier = new JButton("V�rifier");
 
     private Amperemetre amperemetre04 = new Amperemetre();
     private Amperemetre amperemetre3m = new Amperemetre(1);
@@ -80,31 +81,6 @@ public class Fenetre extends JFrame {
     private Pile pile90 = new Pile(1, 1, 1, 1, 1, 1, 1, 1);
     private Pile pile120 = new Pile(1, 1, 1, 1, 1, 1, 1, 1, 1);
     private Pile pile204 = new Pile(1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance1 = new Resistance();
-    private Resistance resistance2 = new Resistance(1);
-    private Resistance resistance2k = new Resistance(1, 1);
-    private Resistance resistance3 = new Resistance(1, 1, 1);
-    private Resistance resistance3k = new Resistance(1, 1, 1, 1);
-    private Resistance resistance4 = new Resistance(1, 1, 1, 1, 1);
-    private Resistance resistance4k = new Resistance(1, 1, 1, 1, 1, 1);
-    private Resistance resistance5 = new Resistance(1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance6 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance7 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance7k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance8 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistance50k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur2k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur3k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur4k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur7k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur10k = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur10 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur11 = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur50K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Resistance resistanceCouleur100K = new Resistance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
     private Voltmetre voltmetre15 = new Voltmetre();
     private Voltmetre voltmetre6 = new Voltmetre(1);
@@ -120,18 +96,19 @@ public class Fenetre extends JFrame {
         new JLabel(pile45), new JLabel(pile4), new JLabel(pile6), new JLabel(pile8), new JLabel(pile10),
         new JLabel(pile12), new JLabel(pile18), new JLabel(pile36), new JLabel(pile90),
         new JLabel(pile120), new JLabel(pile204),
-        new JLabel(resistance1), new JLabel(resistance2),
-        new JLabel(resistance2k), new JLabel(resistance3), new JLabel(resistance3k),
-        new JLabel(resistance4), new JLabel(resistance4k), new JLabel(resistance5),
-        new JLabel(resistance6), new JLabel(resistance7), new JLabel(resistance7k),
-        new JLabel(resistance8), new JLabel(resistance10), new JLabel(resistance10k),
-        new JLabel(resistance11), new JLabel(resistance50k),
         new JLabel(voltmetre15), new JLabel(voltmetre6),
-        new JLabel(resistanceCouleur2k),new JLabel(resistanceCouleur3k),
-        new JLabel(resistanceCouleur4k), new JLabel(resistanceCouleur7k),
-        new JLabel(resistanceCouleur10k), new JLabel(resistanceCouleur10),
-        new JLabel(resistanceCouleur11),new JLabel(resistanceCouleur50K), 
-        new JLabel(resistanceCouleur100K)
+        new JLabel(new Resistance("1")), new JLabel(new Resistance("2")),
+        new JLabel(new Resistance("2K")), new JLabel(new Resistance("3")), new JLabel(new Resistance("3K")),
+        new JLabel(new Resistance("4")), new JLabel(new Resistance("4K")), new JLabel(new Resistance("5")),
+        new JLabel(new Resistance("6")), new JLabel(new Resistance("7")), new JLabel(new Resistance("7K")),
+        new JLabel(new Resistance("8")), new JLabel(new Resistance("10")), new JLabel(new Resistance("10K")),
+        new JLabel(new Resistance("100K")),
+        new JLabel(new Resistance("11")), new JLabel(new Resistance("50K")),
+        new JLabel(new Resistance("2K", true)),new JLabel(new Resistance("3K", true)),
+        new JLabel(new Resistance("4K", true)), new JLabel(new Resistance("7K", true)),
+        new JLabel(new Resistance("10K", true)), new JLabel(new Resistance("10", true)),
+        new JLabel(new Resistance("11", true)),new JLabel(new Resistance("50K", true)), 
+        new JLabel(new Resistance("100K", true))
     };
 
     Timer timer = new Timer(1000, new ActionListener() {
@@ -172,7 +149,7 @@ public class Fenetre extends JFrame {
 
         pnlCarre.setBackground(Color.WHITE);
 
-        pnlJeu.setPreferredSize(new Dimension(700, 900));
+        pnlJeu.setPreferredSize(new Dimension(650, 900));
         pnlJeu.setBackground(Color.WHITE);
         pnlJeu.add(pnlNiveau, BorderLayout.NORTH);
         pnlJeu.add(pnlChronoPoint, BorderLayout.SOUTH);
@@ -183,7 +160,8 @@ public class Fenetre extends JFrame {
         pnlNiveau.setBackground(Color.WHITE);
 
         pnlChronoPoint.add(lblChrono, BorderLayout.WEST);
-        pnlChronoPoint.add(lblPoint, BorderLayout.EAST);
+        pnlChronoPoint.add(lblPoint, BorderLayout.CENTER);
+        pnlChronoPoint.add(btnVerifier, BorderLayout.EAST);
         pnlChronoPoint.setBackground(Color.WHITE);
 
         for (JLabel composante : composantes) {
@@ -194,11 +172,33 @@ public class Fenetre extends JFrame {
         for (JLabel composante : composantes) {
             composante.addMouseListener(listener);
             composante.setTransferHandler(new TransferHandler("icon"));
+            composante.setDropTarget(null);
         }
 
         JScrollPane scrollPane = new JScrollPane(pnlCarre);
         pnlPrincipal.add(scrollPane);
-
+        
+        btnVerifier.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if (backgrounds[niveauActuel].verifier() == true) {
+					bonneReponse();
+				} else {
+					mauvaiseReponse();
+				}
+			}
+		});
+    }
+    
+    private void bonneReponse() {
+    	JOptionPane.showMessageDialog(null, "Bravo!!!  Bonne reponse!");
+    	pnlJeu.remove(backgrounds[niveauActuel]);
+    	niveauActuel++;
+    	changerDeNiveau();
+    }
+    
+    private void mauvaiseReponse() {
+    	JOptionPane.showMessageDialog(null, "Essaie encore!");
     }
 
     private void initMenu() {
@@ -235,10 +235,11 @@ public class Fenetre extends JFrame {
         mnuNouvellePartie.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                if (backgroundActuel != null) {
-                    pnlJeu.remove(backgroundActuel);
+                if (niveauActuel != -1) {
+                    pnlJeu.remove(backgrounds[niveauActuel]);
                     pnlJeu.revalidate();
                     pnlJeu.repaint();
+                    niveauActuel = -1;
                 }
                 creerNiveaux();
                 timer.stop();
@@ -295,7 +296,6 @@ public class Fenetre extends JFrame {
                 int input = (int) JOptionPane.showInputDialog(null,
                         "De quel niveau voulez-vous voir la réponse ?", "Réponses",
                         JOptionPane.QUESTION_MESSAGE, null, niveaux, niveaux[0]);
-                nombreNiveau = input;
                 String rep = null;
                 switch (input) {
                     case 1:
@@ -357,21 +357,11 @@ public class Fenetre extends JFrame {
                         "Choisissez un niveau : ", "Niveaux",
                         JOptionPane.QUESTION_MESSAGE, null, niveaux, niveaux[0]);
 
-                nombreNiveau = input;
-                lblNiveau.setText("Niveau : " + nombreNiveau + "\n");
-
-                if (backgroundActuel != null) {
-                    pnlJeu.remove(backgroundActuel);
+                if (niveauActuel != -1) {
+                    pnlJeu.remove(backgrounds[niveauActuel]);
                 }
-                backgroundActuel = backgrounds[input - 1];
-                pnlJeu.add(backgroundActuel, BorderLayout.CENTER);
-                probleme = backgroundActuel.toString();
-                lblEnoncer.setText("Énoncé du problème : " + "\n" + probleme);
-                lblEnoncer.setLineWrap(true);
-
-                pnlJeu.revalidate();
-                pnlJeu.repaint();
-
+                niveauActuel = input - 1;
+                changerDeNiveau();
             }
         });
 
@@ -383,6 +373,17 @@ public class Fenetre extends JFrame {
 
         });
 
+    }
+    
+    private void changerDeNiveau() {
+        pnlJeu.add(backgrounds[niveauActuel], BorderLayout.CENTER);
+        probleme = backgrounds[niveauActuel].toString();
+        lblEnoncer.setText("Énoncé du problème : " + "\n" + probleme);
+        lblEnoncer.setLineWrap(true);
+        lblNiveau.setText("Niveau : " + (niveauActuel + 1) + "\n");
+
+        pnlJeu.revalidate();
+        pnlJeu.repaint();	
     }
 
     private void creerNiveaux() {
@@ -398,7 +399,7 @@ public class Fenetre extends JFrame {
      * @return
      */
     public int getNombreNiveau() {
-        return nombreNiveau;
+        return niveauActuel;
     }
 
     /**

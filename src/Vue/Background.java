@@ -22,6 +22,8 @@ public abstract class Background extends JPanel{
     }
     
     abstract void init();
+    
+    abstract boolean verifier();
 
  
 }
