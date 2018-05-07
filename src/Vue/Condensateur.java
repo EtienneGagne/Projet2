@@ -6,25 +6,27 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author 1637157
+ *AEC
  */
 public class Condensateur extends ImageIcon {
-	
+ //valeur de la composante	
 String valeur;
-
-    protected static Image imageCondensateur;
-     
-    public Condensateur(String condensateur) {
-        this(condensateur, false);
-	}
-   public Condensateur(String valeur, boolean couleur) {
+ 
+    /**
+     * Constructeur condensateur
+     * @param valeur 
+     */
+   public Condensateur(String valeur) {
+                //la valeur est la valeur du condensateur
 		this.valeur = valeur;
 		String nomFichier;
+                //cherhce le fichier
 		nomFichier = "composantes/condensateurps" + valeur + ".png";
+                //prend la photo du fichier
 		setImage(Toolkit.getDefaultToolkit().getImage(nomFichier));
 		
 		}
-		
+	 //redéfinition de la méthode equals (déjà existante)	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

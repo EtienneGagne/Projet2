@@ -10,20 +10,19 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 /**
- *
- * @author 1637157
+ * @author AEC
  */
-
 public class InterrupteurF extends ImageIcon {
-static Image imageInterrupteurF = Toolkit.getDefaultToolkit().getImage("composantes/interrupteur-fermeps.png");
+//cherche fichier photo 
+
+    static Image imageInterrupteurF = Toolkit.getDefaultToolkit().getImage("composantes/interrupteur-fermeps.png");
 
     /**
-     *
+     * constructeur interrupteur fermé
      */
     public InterrupteurF() {
         super(imageInterrupteurF);
-        
+
     }
-    
 
 }

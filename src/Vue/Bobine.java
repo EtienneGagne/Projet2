@@ -1,6 +1,4 @@
-
 package Vue;
-
 
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -8,16 +6,18 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author 1637157
+ * AEC
  */
 public class Bobine extends ImageIcon {
-static Image imageBobine = Toolkit.getDefaultToolkit().getImage("composantes/bobineps.png");
+//cherche fichier photo 
+
+    static Image imageBobine = Toolkit.getDefaultToolkit().getImage("composantes/bobineps.png");
 
     /**
-     *
+     * constructeur Bobine
      */
     public Bobine() {
         super(imageBobine);
     }
-    
+
 }

@@ -8,13 +8,14 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author 1637157
+ * @author AEC
  */
 public class InterrupteurO extends ImageIcon {
+    //cherche fichier photo 
 static Image imageInterrupteurO = Toolkit.getDefaultToolkit().getImage("composantes/interrupteur-ouvertps.png");
 
     /**
-     *
+     *constructeur Interrupteur ouvert
      */
     public InterrupteurO() {
         super(imageInterrupteurO);

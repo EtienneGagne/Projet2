@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vue;
 
 import java.awt.event.MouseAdapter;
@@ -12,10 +8,13 @@ import javax.swing.TransferHandler;
 
 /**
  *
- * @author 1655538
+ * @author AEC
  */
 class DragMouseAdapter extends MouseAdapter {
-
+    /**
+     * MousePressed
+     * @param e 
+     */
     public void mousePressed(MouseEvent e) {
         JComponent c = (JComponent) e.getSource();
         TransferHandler handler = c.getTransferHandler();
