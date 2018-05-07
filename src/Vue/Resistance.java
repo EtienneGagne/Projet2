@@ -5,7 +5,6 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 /**
- *
  * AEC
  */
 public class Resistance extends ImageIcon {
