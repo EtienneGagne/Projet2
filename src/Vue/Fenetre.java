@@ -57,7 +57,7 @@ public class Fenetre extends JFrame {
     private JMenuItem mnuApprentissage = new JMenuItem("Apprentissage");
     private JMenuItem mnuChrono = new JMenuItem("Chrono");
     
-    private JButton btnVerifier = new JButton("Vérifier");
+    private JButton btnVerifier = new JButton("Verifier");
 
     private Amperemetre amperemetre04 = new Amperemetre();
     private Amperemetre amperemetre3m = new Amperemetre(1);
