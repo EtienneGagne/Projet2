@@ -274,17 +274,11 @@ public class Fenetre extends JFrame {
             public void actionPerformed(ActionEvent ae) {
                 if (niveauActuel != -1) {
                     pnlJeu.remove(backgrounds[niveauActuel]);
-                    //réinitialiser et recréer
-                    pnlJeu.revalidate();
-                    pnlJeu.repaint();
-                    niveauActuel = -1;
+                    reset();
                 }
                 //création des niveaux
                 creerNiveaux();
-                //arrêt du chrono
-                timer.stop();
-                //réinialisation du chrono
-                chrono = 0;
+
             }
         });
         //Afficher le nom des créateur et la date de finalisation
@@ -412,7 +406,7 @@ public class Fenetre extends JFrame {
                 changerDeNiveau();
             }
         });
-        //Départ du chronomètre si l'utilisateur veut chronométré sa performance
+        //Départ du chronomètre et les niveaux en ordre
         mnuChrono.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -429,7 +423,7 @@ public class Fenetre extends JFrame {
      * Changement de niveau (background, énoncé, niveau)
      */
     private void changerDeNiveau() {
-        if (niveauActuel < 9) {
+        if (niveauActuel <= 8) {
             //changment de background
             pnlJeu.add(backgrounds[niveauActuel], BorderLayout.CENTER);
             //énoncé du problème relié au background
@@ -439,7 +433,7 @@ public class Fenetre extends JFrame {
             lblEnoncer.setLineWrap(true);
             //changment du niveau affiché
             lblNiveau.setText("Niveau : " + (niveauActuel + 1) + "\n");
-            //réinitialiser le tout
+            //réinitialiser le background
             pnlJeu.revalidate();
             pnlJeu.repaint();
         } else {
@@ -448,14 +442,8 @@ public class Fenetre extends JFrame {
                     + nombrePoint + " \n"
                     + " Votre temps: " + chrono + "\n Voulez vous quitter?", "Question", dialogBouton);
             if (reponse == JOptionPane.NO_OPTION) {
-
-                //réinitialiser et recréer
-                niveauActuel = -1;
-                chrono = 0;
-                nombrePoint = 0;
-                probleme = "";
-                pnlJeu.revalidate();
-                pnlJeu.repaint();
+                //réinitialiser le tout
+                reset();
 
             } else if (reponse == JOptionPane.YES_OPTION) {
                 //le programme se ferme
@@ -490,8 +478,29 @@ public class Fenetre extends JFrame {
     public int getNombrePoint() {
         return nombrePoint;
     }
-
+/**
+ * remet tout à 0 comme à l'ouverture du projet
+ */
     public void reset() {
+               
+        timer.stop();
 
+        nombrePoint = 0;
+        chrono = 0;
+        lblChrono.setText("     00:00      ");
+        lblPoint.setText(nombrePoint + " points     ");
+        pnlChronoPoint.revalidate();
+        pnlChronoPoint.repaint();
+        
+        probleme = "";
+        niveauActuel = -1;
+        lblNiveau.setText("Niveau : " + "\n");
+        lblEnoncer.setText("Énoncé du problème : " + "\n" + probleme);
+        pnlNiveau.revalidate();
+        pnlNiveau.repaint();
+        
+        pnlJeu.revalidate();
+        pnlJeu.repaint();
+ 
     }
 }
