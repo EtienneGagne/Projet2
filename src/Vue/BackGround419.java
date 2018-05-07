@@ -12,10 +12,10 @@ import javax.swing.TransferHandler;
  */
 public class BackGround419 extends Background {
 
-    private Condensateur condensateur3 = new Condensateur(1);
-    private Condensateur condensateur2 = new Condensateur();
-    private Condensateur condensateur4 = new Condensateur(1,1);
-    private Pile pile90 = new Pile(1,1,1,1,1,1,1);
+    private Condensateur condensateur3 = new Condensateur("3");
+    private Condensateur condensateur2 = new Condensateur("2");
+    private Condensateur condensateur4 = new Condensateur("4");
+    private Pile pile90 = new Pile("90");
     
     JButton btnUn = new JButton(condensateur3);
     JButton btnDeux = new JButton();

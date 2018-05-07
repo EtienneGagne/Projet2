@@ -13,7 +13,7 @@ import javax.swing.TransferHandler;
 public class BackGround667 extends Background {
 
     private InterrupteurF interrupteurF = new InterrupteurF();
-    private Condensateur condensateur6 = new Condensateur(1, 1, 1);
+    private Condensateur condensateur6 = new Condensateur("6");
     private Resistance resistance4k = new Resistance("4K");
 
     JButton btnUn = new JButton("F.e.m");

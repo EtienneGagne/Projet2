@@ -24,7 +24,7 @@ public class BackGround639 extends Background {
      
      private Resistance reponseA = new Resistance("50K");
      private Resistance reponseB = new Resistance("100K");
-     private Condensateur reponseC = new Condensateur(1, 1, 1, 1);
+     private Condensateur reponseC = new Condensateur("10");
      
     JButton btnUn = new JButton(pile10);
     JButton btnDeux = new JButton(ResistanceCouleur50K);

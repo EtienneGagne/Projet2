@@ -1,7 +1,6 @@
 package Vue;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
@@ -59,39 +58,32 @@ public class Fenetre extends JFrame {
     
     private JButton btnVerifier = new JButton("Verifier");
 
-    private Amperemetre amperemetre04 = new Amperemetre();
-    private Amperemetre amperemetre3m = new Amperemetre(1);
-    private Ampoule ampoule = new Ampoule();
-    private Bobine bobine = new Bobine();
-    private Condensateur condensateur2 = new Condensateur();
-    private Condensateur condensateur3 = new Condensateur(1);
-    private Condensateur condensateur4 = new Condensateur(1, 1);
-    private Condensateur condensateur6 = new Condensateur(1, 1, 1);
-    private Condensateur condensateur10 = new Condensateur(1, 1, 1, 1);
-
-
-
-    private Voltmetre voltmetre15 = new Voltmetre();
-    private Voltmetre voltmetre6 = new Voltmetre(1);
-
     private JLabel composantes[] = {
-        new JLabel(amperemetre04), new JLabel(amperemetre3m),
+        new JLabel(new Amperemetre("0.4")), new JLabel(new Amperemetre("3")),
+        
         new JLabel(new Ampoule()),
+        
         new JLabel(new Bobine()),
-        new JLabel(condensateur2), new JLabel(condensateur3), new JLabel(condensateur4),
-        new JLabel(condensateur6), new JLabel(condensateur10),
+        
+        new JLabel(new Condensateur("2")), new JLabel(new Condensateur("3")), new JLabel(new Condensateur("4")),
+        new JLabel(new Condensateur("6")), new JLabel(new Condensateur("10")),
+        
         new JLabel(new InterrupteurO()),
         new JLabel(new InterrupteurF()),
+        
         new JLabel(new Pile("4.5")), new JLabel(new Pile("4")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
         new JLabel(new Pile("12")), new JLabel(new Pile("18")), new JLabel(new Pile("36")), new JLabel(new Pile("90")),
         new JLabel(new Pile("120")), new JLabel(new Pile("204")),
-        new JLabel(voltmetre15), new JLabel(voltmetre6),
+        
+        new JLabel(new Voltmetre("15")), new JLabel(new Voltmetre("6")),
+        
         new JLabel(new Resistance("1")), new JLabel(new Resistance("2")),
         new JLabel(new Resistance("2K")), new JLabel(new Resistance("3")), new JLabel(new Resistance("3K")),
         new JLabel(new Resistance("4")), new JLabel(new Resistance("4K")), new JLabel(new Resistance("5")),
         new JLabel(new Resistance("6")), new JLabel(new Resistance("7")), new JLabel(new Resistance("7K")),
         new JLabel(new Resistance("8")), new JLabel(new Resistance("10")), new JLabel(new Resistance("10K")),
         new JLabel(new Resistance("100K")),
+        
         new JLabel(new Resistance("11")), new JLabel(new Resistance("50K")),
         new JLabel(new Resistance("2K", true)),new JLabel(new Resistance("3K", true)),
         new JLabel(new Resistance("4K", true)), new JLabel(new Resistance("7K", true)),

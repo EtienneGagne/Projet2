@@ -11,8 +11,8 @@ import javax.swing.TransferHandler;
  * @author 1637157
  */
 public class BackGround651 extends Background  {
-    private Voltmetre voltmetre6 = new Voltmetre(1);
-    private Amperemetre amperemetre3m = new Amperemetre(1);
+    private Voltmetre voltmetre6 = new Voltmetre("6");
+    private Amperemetre amperemetre3m = new Amperemetre("3");
     private Resistance resistance3k = new Resistance("3K");
      
     final JButton btnUn=new JButton(voltmetre6);

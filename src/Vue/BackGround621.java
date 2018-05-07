@@ -16,7 +16,7 @@ public class BackGround621 extends Background {
     private Resistance resistance5 = new Resistance("5");
     private Resistance resistance11 = new Resistance("11");
     private Pile pile4 = new Pile("4");
-    private Condensateur condensateur2 = new Condensateur();
+    private Condensateur condensateur2 = new Condensateur("2");
 
     JButton btnUn = new JButton("R1");
     JButton btnDeux = new JButton(pile4);
