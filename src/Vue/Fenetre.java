@@ -204,6 +204,10 @@ public class Fenetre extends JFrame {
     	pnlJeu.remove(backgrounds[niveauActuel]);
         //changment vers niveau supérieur
     	niveauActuel++;
+        nombrePoint += 10;
+        lblPoint.setText(nombrePoint + " points     ");
+        pnlChronoPoint.revalidate();
+        pnlChronoPoint.repaint();
     	changerDeNiveau();
     }
     /**
@@ -211,6 +215,10 @@ public class Fenetre extends JFrame {
      */
     private void mauvaiseReponse() {
     	JOptionPane.showMessageDialog(null, "Essaie encore!");
+        nombrePoint -= 2;
+        lblPoint.setText(nombrePoint + " points     ");
+        pnlChronoPoint.revalidate();
+        pnlChronoPoint.repaint();
     }
     /**
      * création des menus du jeu
