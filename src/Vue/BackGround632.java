@@ -15,7 +15,7 @@ public class BackGround632 extends Background {
     private Resistance resistance8 = new Resistance("8");
     private Resistance resistance5 = new Resistance("5");
     private Resistance resistance11 = new Resistance("11");
-    private Pile pile12 = new Pile(1, 1, 1, 1);
+    private Pile pile12 = new Pile("12");
     private Resistance resistance7 = new Resistance("7");
     
     final JButton btnUn = new JButton(resistance8);

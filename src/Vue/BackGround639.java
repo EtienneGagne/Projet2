@@ -17,7 +17,7 @@ import javax.swing.TransferHandler;
  */
 public class BackGround639 extends Background {
     
-     private Pile pile10 = new Pile(1, 1, 1, 1);
+     private Pile pile10 = new Pile("10");
      private Resistance ResistanceCouleur50K = new Resistance("50K", true);
      private InterrupteurO interrupteurO = new InterrupteurO();
      private Resistance ResistanceCouleur100K =new Resistance("100K", true);

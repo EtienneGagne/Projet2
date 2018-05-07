@@ -13,10 +13,6 @@ public class Resistance extends ImageIcon {
 	String valeur;
 	boolean couleur;
 
-    /**
-     *
-     */
-    protected static Image imageResistance;
 
 
     /**

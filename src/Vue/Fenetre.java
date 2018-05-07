@@ -68,34 +68,23 @@ public class Fenetre extends JFrame {
     private Condensateur condensateur4 = new Condensateur(1, 1);
     private Condensateur condensateur6 = new Condensateur(1, 1, 1);
     private Condensateur condensateur10 = new Condensateur(1, 1, 1, 1);
-    private InterrupteurO interrupteurO = new InterrupteurO();
-    private InterrupteurF interrupteurF = new InterrupteurF();
-    private Pile pile45 = new Pile();
-    private Pile pile4 = new Pile(1);
-    private Pile pile6 = new Pile(1, 1);
-    private Pile pile8 = new Pile(1, 1, 1);
-    private Pile pile10 = new Pile(1, 1, 1, 1);
-    private Pile pile12 = new Pile(1, 1, 1, 1, 1);
-    private Pile pile18 = new Pile(1, 1, 1, 1, 1, 1);
-    private Pile pile36 = new Pile(1, 1, 1, 1, 1, 1, 1);
-    private Pile pile90 = new Pile(1, 1, 1, 1, 1, 1, 1, 1);
-    private Pile pile120 = new Pile(1, 1, 1, 1, 1, 1, 1, 1, 1);
-    private Pile pile204 = new Pile(1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+
+
 
     private Voltmetre voltmetre15 = new Voltmetre();
     private Voltmetre voltmetre6 = new Voltmetre(1);
 
     private JLabel composantes[] = {
         new JLabel(amperemetre04), new JLabel(amperemetre3m),
-        new JLabel(ampoule),
-        new JLabel(bobine),
+        new JLabel(new Ampoule()),
+        new JLabel(new Bobine()),
         new JLabel(condensateur2), new JLabel(condensateur3), new JLabel(condensateur4),
         new JLabel(condensateur6), new JLabel(condensateur10),
-        new JLabel(interrupteurO),
-        new JLabel(interrupteurF),
-        new JLabel(pile45), new JLabel(pile4), new JLabel(pile6), new JLabel(pile8), new JLabel(pile10),
-        new JLabel(pile12), new JLabel(pile18), new JLabel(pile36), new JLabel(pile90),
-        new JLabel(pile120), new JLabel(pile204),
+        new JLabel(new InterrupteurO()),
+        new JLabel(new InterrupteurF()),
+        new JLabel(new Pile("4.5")), new JLabel(new Pile("4")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
+        new JLabel(new Pile("12")), new JLabel(new Pile("18")), new JLabel(new Pile("36")), new JLabel(new Pile("90")),
+        new JLabel(new Pile("120")), new JLabel(new Pile("204")),
         new JLabel(voltmetre15), new JLabel(voltmetre6),
         new JLabel(new Resistance("1")), new JLabel(new Resistance("2")),
         new JLabel(new Resistance("2K")), new JLabel(new Resistance("3")), new JLabel(new Resistance("3K")),
