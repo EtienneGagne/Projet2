@@ -12,37 +12,38 @@ import javax.swing.ImageIcon;
  * @author 1637157
  */
 public class Voltmetre extends ImageIcon {
- 
-    /**
-     *
-     */
-    protected static Image imageVoltmetre= Toolkit.getDefaultToolkit().getImage("composantes/voltmetreps1.5.png");
+ String valeur;
 
-    /**
-     *
-     */
-    protected static Image imageVoltmetre1=Toolkit.getDefaultToolkit().getImage("composantes/voltmetreps6.png");
-
-    /**
-     *
-     */
-    public Voltmetre(){
-       super(imageVoltmetre);
-        }
-
-    /**
-     *
-     * @param a
-     */
-    public Voltmetre(int a){
-       super(imageVoltmetre1);
-        }
-    
-    
-        
+    protected static Image imageVoltmetre;
      
-                }
-    
+    public Voltmetre(String voltmetre) {
+        this(voltmetre, false);
+	}
+   public Voltmetre(String valeur, boolean couleur) {
+		this.valeur = valeur;
+		String nomFichier;
+		nomFichier = "composantes/voltmetreps" + valeur + ".png";
+		setImage(Toolkit.getDefaultToolkit().getImage(nomFichier));
+		
+		}
+		
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Voltmetre other = (Voltmetre) obj;
+		if (valeur == null) {
+			if (other.valeur != null)
+				return false;
+		} else if (!valeur.equals(other.valeur)) {
+			return false;			
+		}
+		return true;
+	}}
         
     
     
