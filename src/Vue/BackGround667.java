@@ -8,36 +8,37 @@ import javax.swing.JButton;
 import javax.swing.TransferHandler;
 
 /**
- *
- *AEC
+ *@author AEC
  */
 public class BackGround667 extends Background {
 
+    //création des éléments qui vont dans les backgrounds
     private InterrupteurF interrupteurF = new InterrupteurF();
     private Condensateur condensateur6 = new Condensateur("6");
     private Resistance resistance4k = new Resistance("4K");
-
-   private Resistance reponseA=new Resistance("7K");
+   
+    private Resistance reponseA=new Resistance("7K");
     private Condensateur reponseB=new Condensateur("3");
     private Pile reponseC=new Pile("204");
 
+    //création des JComponents qui contiennent les composants à changer
     JButton btnUn = new JButton(new Pile("X"));
     JButton btnDeux = new JButton(new Resistance("X"));
     JButton btnTrois = new JButton(new Condensateur("X"));
-    final JButton btnQuatre = new JButton(interrupteurF);
-    final JButton btnCinq = new JButton(condensateur6);
-    final JButton btnSix = new JButton(resistance4k);
+    JButton btnQuatre = new JButton(interrupteurF);
+    JButton btnCinq = new JButton(condensateur6);
+    JButton btnSix = new JButton(resistance4k);
 
     String nL1 = System.getProperty("line.separator"); // pour 1 interligne
-
+    //cherche image dans fichier
     Image image667 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.67.png");
-    JButton button[] = new JButton[6];
-
+  
     /**
-     *
+     *constructeur de BackGround
      */
     public BackGround667() {
         super();
+        //méthode de la classe mere
         init();
     }
 
@@ -50,35 +51,30 @@ public class BackGround667 extends Background {
     }
 
     /**
-     *
+     *positionnement des boutons dans le backgrounds
      */
     public void init() {
-        button[0] = btnUn;
-        button[1] = btnDeux;
-        button[2] = btnTrois;
-        button[3] = btnQuatre;
-        button[4] = btnCinq;
-        button[5] = btnSix;
+       
+        add(btnUn);
+        add(btnDeux);
+        add(btnTrois);
+        add(btnQuatre);
+        add(btnCinq);
+        add(btnSix);
+        
 
-        add(button[0]);
-        add(button[1]);
-        add(button[2]);
-        add(button[3]);
-        add(button[4]);
-        add(button[5]);
-
-        button[0].setBounds(245, 65, 100, 75);
-        button[0].setTransferHandler(new TransferHandler("icon"));
-        button[1].setBounds(85, 250, 100, 75);
-        button[1].setTransferHandler(new TransferHandler("icon"));
-        button[2].setBounds(300, 250, 100, 75);
-        button[2].setTransferHandler(new TransferHandler("icon"));
-        button[3].setBounds(220, 385, 100, 75);
-        button[4].setBounds(150, 545, 100, 75);
-        button[5].setBounds(380, 545, 100, 75);
+        btnUn.setBounds(245, 65, 100, 75);
+        btnUn.setTransferHandler(new TransferHandler("icon"));
+        btnDeux.setBounds(85, 250, 100, 75);
+        btnDeux.setTransferHandler(new TransferHandler("icon"));
+        btnTrois.setBounds(300, 250, 100, 75);
+        btnTrois.setTransferHandler(new TransferHandler("icon"));
+        btnQuatre.setBounds(220, 385, 100, 75);
+        btnCinq.setBounds(150, 545, 100, 75);
+        btnSix.setBounds(380, 545, 100, 75);
 
     }
-
+    //énoncé du problème
     @Override
     public String toString() {
         return "Soit la puissance de R2,P2=2,40 W, et I=18.5 mA"
@@ -86,7 +82,7 @@ public class BackGround667 extends Background {
                 + "B)Déterminez C1, sachant que P1=222 µC." + "\n"
                 + "C)Trouvez la f.é.m.";
     }
-
+        //vérification de la réponse
 	@Override
 	boolean verifier() {
 		return btnDeux.getIcon().equals(reponseA) && btnTrois.getIcon().equals(reponseB) && btnUn.getIcon().equals(reponseC);

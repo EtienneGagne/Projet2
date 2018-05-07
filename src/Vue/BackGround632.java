@@ -8,40 +8,41 @@ import javax.swing.TransferHandler;
 
 /**
  *
- * @author 1637157
+ * @author AEC
  */
 public class BackGround632 extends Background {
+    //création des éléments qui vont dans les backgrounds
 
     private Resistance resistance8 = new Resistance("8");
     private Resistance resistance5 = new Resistance("5");
     private Resistance resistance11 = new Resistance("11");
     private Pile pile12 = new Pile("12");
     private Resistance resistance7 = new Resistance("7");
-    
-    private Resistance ResistanceCouleur11 =new Resistance("11", true);
+
+    private Resistance ResistanceCouleur11 = new Resistance("11", true);
 
     private Resistance reponseA = new Resistance("11");
     private Pile reponseB = new Pile("18");
     private Pile reponseC = new Pile("36");
-
-    final JButton btnUn = new JButton(resistance8);
+    //création des JComponents qui contiennent les composants à changer
+    JButton btnUn = new JButton(resistance8);
     JButton btnDeux = new JButton(new Pile("X"));
-    final JButton btnTrois = new JButton(resistance5);
-    final JButton btnQuatre = new JButton(ResistanceCouleur11);
-    final JButton btnCinq = new JButton(pile12);
-    final JButton btnSix = new JButton(resistance7);
-    final JButton btnSept = new JButton(resistance5);
+    JButton btnTrois = new JButton(resistance5);
+    JButton btnQuatre = new JButton(ResistanceCouleur11);
+    JButton btnCinq = new JButton(pile12);
+    JButton btnSix = new JButton(resistance7);
+    JButton btnSept = new JButton(resistance5);
     JButton btnHuit = new JButton(new Pile("X"));
 
-
+    //cherche image dans fichier
     Image image632 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.32.png");
-    JButton button[] = new JButton[8];
 
     /**
-     *
+     * constructeur de BackGround
      */
     public BackGround632() {
         super();
+        //méthode de la classe mere
         init();
     }
 
@@ -54,39 +55,32 @@ public class BackGround632 extends Background {
     }
 
     /**
-     *
+     * positionnement des boutons dans le backgrounds
      */
     public void init() {
-        button[0] = btnUn;
-        button[1] = btnDeux;
-        button[2] = btnTrois;
-        button[3] = btnQuatre;
-        button[4] = btnCinq;
-        button[5] = btnSix;
-        button[6] = btnSept;
-        button[7] = btnHuit;
 
-        add(button[0]);
-        add(button[1]);
-        add(button[2]);
-        add(button[3]);
-        add(button[4]);
-        add(button[5]);
-        add(button[6]);
-        add(button[7]);
+        add(btnUn);
+        add(btnDeux);
+        add(btnTrois);
+        add(btnQuatre);
+        add(btnCinq);
+        add(btnSix);
+        add(btnSept);
+        add(btnHuit);
 
-        button[0].setBounds(120, 50, 100, 75);
-        button[1].setBounds(260, 50, 100, 75);
-        button[1].setTransferHandler(new TransferHandler("icon"));
-        button[2].setBounds(400, 50, 100, 75);
-        button[3].setBounds(120, 230, 100, 75);
-        button[3].setTransferHandler(new TransferHandler("icon"));
-        button[4].setBounds(260, 230, 100, 75);
-        button[5].setBounds(400, 230, 100, 75);
-        button[6].setBounds(160, 600, 100, 75);
-        button[7].setBounds(360, 600, 100, 75);
-        button[7].setTransferHandler(new TransferHandler("icon"));
+        btnUn.setBounds(120, 50, 100, 75);
+        btnDeux.setBounds(260, 50, 100, 75);
+        btnDeux.setTransferHandler(new TransferHandler("icon"));
+        btnTrois.setBounds(400, 50, 100, 75);
+        btnQuatre.setBounds(120, 230, 100, 75);
+        btnQuatre.setTransferHandler(new TransferHandler("icon"));
+        btnCinq.setBounds(260, 230, 100, 75);
+        btnSix.setBounds(400, 230, 100, 75);
+        btnSept.setBounds(160, 600, 100, 75);
+        btnHuit.setBounds(360, 600, 100, 75);
+        btnHuit.setTransferHandler(new TransferHandler("icon"));
     }
+    //énoncé du problème
 
     @Override
     public String toString() {
@@ -94,9 +88,10 @@ public class BackGround632 extends Background {
                 + "A)Trouvez la valeur de la résistance inconnu à l'aide des bandes de couleurs." + "\n"
                 + "B) trouvez les deux valeurs de piles manquantes.";
     }
+    //vérification de la réponse
 
-	@Override
-	boolean verifier() {
-		return btnQuatre.getIcon().equals(reponseA) && btnDeux.getIcon().equals(reponseB) && btnHuit.getIcon().equals(reponseC);
-	}
+    @Override
+    boolean verifier() {
+        return btnQuatre.getIcon().equals(reponseA) && btnDeux.getIcon().equals(reponseB) && btnHuit.getIcon().equals(reponseC);
+    }
 }

@@ -9,10 +9,11 @@ import javax.swing.TransferHandler;
 
 /**
  *
- * @author 1637157
+ * @author AEC
  */
 public class BackGround625 extends Background {
 
+    //création des éléments qui vont dans les backgrounds
     private Resistance resistance6 = new Resistance("6");
     private Pile pile6 = new Pile("6");
     private Resistance resistance10 = new Resistance("10");
@@ -21,24 +22,24 @@ public class BackGround625 extends Background {
 
     private Amperemetre reponseA = new Amperemetre("0.4");
     private Voltmetre reponseB = new Voltmetre("1.5");
-
+    //création des JComponents qui contiennent les composants à changer
     JButton btnUn = new JButton();
-    final JButton btnDeux = new JButton(resistance6);
-    final JButton btnTrois = new JButton(pile6);
+    JButton btnDeux = new JButton(resistance6);
+    JButton btnTrois = new JButton(pile6);
     JButton btnQuatre = new JButton();
-    final JButton btnCinq = new JButton(resistance10);
-    final JButton btnSix = new JButton(resistance5);
-    final JButton btnSept = new JButton(pile45);
-    final JButton btnHuit = new JButton(resistance6);
-
+    JButton btnCinq = new JButton(resistance10);
+    JButton btnSix = new JButton(resistance5);
+    JButton btnSept = new JButton(pile45);
+    JButton btnHuit = new JButton(resistance6);
+    //cherche image dans fichier
     Image image625 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.25.png");
-    JButton button[] = new JButton[8];
 
     /**
-     *
+     * constructeur de BackGround
      */
     public BackGround625() {
         super();
+        //méthode de la classe mere
         init();
     }
 
@@ -52,45 +53,39 @@ public class BackGround625 extends Background {
     }
 
     /**
-     *
+     * positionnement des boutons dans le backgrounds
      */
     public void init() {
-        button[0] = btnUn;
-        button[1] = btnDeux;
-        button[2] = btnTrois;
-        button[3] = btnQuatre;
-        button[4] = btnCinq;
-        button[5] = btnSix;
-        button[6] = btnSept;
-        button[7] = btnHuit;
 
-        add(button[0]);
-        add(button[1]);
-        add(button[2]);
-        add(button[3]);
-        add(button[4]);
-        add(button[5]);
-        add(button[6]);
-        add(button[7]);
+        add(btnUn);
+        add(btnDeux);
+        add(btnTrois);
+        add(btnQuatre);
+        add(btnCinq);
+        add(btnSix);
+        add(btnSept);
+        add(btnHuit);
 
-        button[0].setBounds(150, 50, 100, 75);
-        button[0].setTransferHandler(new TransferHandler("icon"));
-        button[1].setBounds(350, 50, 100, 75);
-        button[2].setBounds(415, 230, 100, 75);
-        button[3].setBounds(268, 310, 100, 75);
-        button[3].setTransferHandler(new TransferHandler("icon"));
-        button[4].setBounds(125, 230, 100, 75);
-        button[5].setBounds(115, 425, 100, 75);
-        button[6].setBounds(350, 425, 100, 75);
-        button[7].setBounds(250, 595, 100, 75);
+        btnUn.setBounds(150, 50, 100, 75);
+        btnUn.setTransferHandler(new TransferHandler("icon"));
+        btnDeux.setBounds(350, 50, 100, 75);
+        btnTrois.setBounds(415, 230, 100, 75);
+        btnQuatre.setBounds(268, 310, 100, 75);
+        btnQuatre.setTransferHandler(new TransferHandler("icon"));
+        btnCinq.setBounds(125, 230, 100, 75);
+        btnSix.setBounds(115, 425, 100, 75);
+        btnSept.setBounds(350, 425, 100, 75);
+        btnHuit.setBounds(250, 595, 100, 75);
     }
 
+    //énoncé du problème
     @Override
     public String toString() {
         return "A) Place l'ampèremètre au bonne endroit avec la bonne valeur affichée sur l'ampèremètre." + "\n"
                 + "B) Place le voltmètre au bonne endroit avec la bonne valeur affichée sur le voltmètre.";
     }
 
+    //vérification de la réponse
     @Override
     boolean verifier() {
         return btnUn.getIcon().equals(reponseA) && btnSix.getIcon().equals(reponseB);
