@@ -23,7 +23,7 @@ public class Main {
        Fenetre fenetre=new Fenetre();
      try {
     for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-        if ("Nimbus".equals(info.getName())) {
+        if ("Arial".equals(info.getName())) {
             UIManager.setLookAndFeel(info.getClassName());
             break;
         }

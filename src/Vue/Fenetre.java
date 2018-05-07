@@ -34,7 +34,7 @@ public class Fenetre extends JFrame {
     private int niveauActuel = -1;
     //création des panneaux
     private JPanel pnlPrincipal = new JPanel(new BorderLayout());
-    private JPanel pnlCarre = new JPanel(new GridLayout(50, 1));
+    private JPanel pnlCarre = new JPanel(new GridLayout(51, 1));
     private JPanel pnlJeu = new JPanel(new BorderLayout());
     private JPanel pnlNiveau = new JPanel(new BorderLayout());
     private JPanel pnlChronoPoint = new JPanel(new BorderLayout());
@@ -73,7 +73,7 @@ public class Fenetre extends JFrame {
         new JLabel(new InterrupteurO()),
         new JLabel(new InterrupteurF()),
         
-        new JLabel(new Pile("4.5")), new JLabel(new Pile("4")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
+        new JLabel(new Pile("4.5")), new JLabel(new Pile("15")),new JLabel(new Pile("4")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
         new JLabel(new Pile("12")), new JLabel(new Pile("18")), new JLabel(new Pile("36")), new JLabel(new Pile("90")),
         new JLabel(new Pile("120")), new JLabel(new Pile("204")),
         
