@@ -77,7 +77,7 @@ public class BackGround419 extends Background {
 
 	@Override
 	boolean verifier() {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
