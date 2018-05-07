@@ -18,14 +18,21 @@ public class BackGround632 extends Background {
     private Pile pile12 = new Pile("12");
     private Resistance resistance7 = new Resistance("7");
     
+    private Resistance ResistanceCouleur11 =new Resistance("11", true);
+
+    private Resistance reponseA = new Resistance("11");
+    private Pile reponseB = new Pile("18");
+    private Pile reponseC = new Pile("36");
+
     final JButton btnUn = new JButton(resistance8);
-    JButton btnDeux = new JButton("F.e.m");
+    JButton btnDeux = new JButton(new Pile("X"));
     final JButton btnTrois = new JButton(resistance5);
-    final JButton btnQuatre = new JButton(resistance11);
+    final JButton btnQuatre = new JButton(ResistanceCouleur11);//couleur
     final JButton btnCinq = new JButton(pile12);
     final JButton btnSix = new JButton(resistance7);
     final JButton btnSept = new JButton(resistance5);
-    JButton btnHuit = new JButton("F.e.m");
+    JButton btnHuit = new JButton(new Pile("X"));
+
 
     Image image632 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.32.png");
     JButton button[] = new JButton[8];
@@ -98,7 +105,6 @@ public class BackGround632 extends Background {
 
 	@Override
 	boolean verifier() {
-		// TODO Auto-generated method stub
-		return false;
+		return btnQuatre.getIcon().equals(reponseA) && btnDeux.getIcon().equals(reponseB) && btnHuit.getIcon().equals(reponseC);
 	}
 }

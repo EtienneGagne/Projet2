@@ -16,12 +16,17 @@ public class BackGround667 extends Background {
     private Condensateur condensateur6 = new Condensateur("6");
     private Resistance resistance4k = new Resistance("4K");
 
-    JButton btnUn = new JButton("F.e.m");
-    JButton btnDeux = new JButton("R2");
-    JButton btnTrois = new JButton("C1");
+   private Resistance reponseA=new Resistance("7K");
+    private Condensateur reponseB=new Condensateur("3");
+    private Pile reponseC=new Pile("204");
+
+    JButton btnUn = new JButton(new Pile("X"));
+    JButton btnDeux = new JButton(new Resistance("X"));
+    JButton btnTrois = new JButton(new Condensateur("X"));
     final JButton btnQuatre = new JButton(interrupteurF);
     final JButton btnCinq = new JButton(condensateur6);
     final JButton btnSix = new JButton(resistance4k);
+
     String nL1 = System.getProperty("line.separator"); // pour 1 interligne
 
     Image image667 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.67.png");
@@ -89,8 +94,7 @@ public class BackGround667 extends Background {
 
 	@Override
 	boolean verifier() {
-		// TODO Auto-generated method stub
-		return false;
+		return btnDeux.getIcon().equals(reponseA) && btnTrois.getIcon().equals(reponseB) && btnUn.getIcon().equals(reponseC);
 	}
 
 }

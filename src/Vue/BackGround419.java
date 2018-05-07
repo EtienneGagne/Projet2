@@ -17,11 +17,14 @@ public class BackGround419 extends Background {
     private Condensateur condensateur4 = new Condensateur("4");
     private Pile pile90 = new Pile("90");
     
+    private Condensateur reponse = new Condensateur("6");
+    
     JButton btnUn = new JButton(condensateur3);
-    JButton btnDeux = new JButton();
+    JButton btnDeux = new JButton( new Condensateur("X"));
     JButton btnTrois = new JButton(condensateur2);
     JButton btnQuatre = new JButton(condensateur4);
     JButton btnCinq = new JButton(pile90);
+
 
     Image image419 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/4.19.png");
     JButton button[] = new JButton[5];
@@ -78,7 +81,7 @@ public class BackGround419 extends Background {
 	@Override
 	boolean verifier() {
 		
-		return false;
+		return btnDeux.getIcon().equals(reponse);
 	}
 
 }

@@ -15,12 +15,16 @@ public class BackGround661 extends Background {
      private Condensateur condensateur3 = new Condensateur("3");
      private InterrupteurF interrupteurF = new InterrupteurF();
      
-    JButton btnUn = new JButton("R1");
-    JButton btnDeux = new JButton("C1");
-    final JButton btnTrois = new JButton(resistance3k);
-    final JButton btnQuatre = new JButton(condensateur3);
-    final JButton btnCinq = new JButton(interrupteurF);
-    JButton btnSix = new JButton("F.e.m");
+   private Condensateur reponseA=new Condensateur("2");
+     private Pile reponseB=new Pile("120");
+     private Resistance reponseC=new Resistance("2K");
+     
+    JButton btnUn = new JButton(new Resistance("X"));
+    JButton btnDeux = new JButton(new Condensateur("X"));
+    JButton btnTrois = new JButton(resistance3k);
+    JButton btnQuatre = new JButton(condensateur3);
+    JButton btnCinq = new JButton(interrupteurF);
+    JButton btnSix = new JButton(new Pile("X"));
 
     Image image661 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.61.png");
     JButton button[] = new JButton[6];
@@ -81,7 +85,6 @@ public class BackGround661 extends Background {
 
 	@Override
 	boolean verifier() {
-		// TODO Auto-generated method stub
-		return false;
+		return btnDeux.getIcon().equals(reponseA) && btnSix.getIcon().equals(reponseB) && btnUn.getIcon().equals(reponseC);
 	}
 }

@@ -18,6 +18,9 @@ public class BackGround625 extends Background {
     private Resistance resistance5 = new Resistance("5");
     private Pile pile45 = new Pile("4.5");
    
+    private Amperemetre reponseA=new Amperemetre("0.4");
+    private Voltmetre reponseB=new Voltmetre("1.5");
+   
     JButton btnUn = new JButton();
     final JButton btnDeux = new JButton(resistance6);
     final JButton btnTrois = new JButton(pile6);
@@ -26,6 +29,7 @@ public class BackGround625 extends Background {
     final JButton btnSix = new JButton(resistance5);
     final JButton btnSept = new JButton(pile45);
     final JButton btnHuit = new JButton(resistance6);
+
 
     Image image625 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.25.png");
     JButton button[] = new JButton[8];
@@ -92,7 +96,6 @@ public class BackGround625 extends Background {
 
 	@Override
 	boolean verifier() {
-		// TODO Auto-generated method stub
-		return false;
+		return btnUn.getIcon().equals(reponseA) && btnSix.getIcon().equals(reponseB);
 	}
 }

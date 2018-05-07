@@ -17,12 +17,16 @@ public class BackGround619 extends Background {
     private Resistance resistance5 = new Resistance ("5");
     private Resistance resistance4 = new Resistance ("4");
 
+    private Resistance reponseA=new Resistance("3");
+    private Pile reponseB=new Pile("8");
+    
     JButton btnUn = new JButton(resistance10);
     JButton btnDeux = new JButton(resistance5);
     JButton btnTrois = new JButton(resistance4);
-    JButton btnQuatre = new JButton(" R ");
+    JButton btnQuatre = new JButton( new Resistance("X"));
     JButton btnCinq = new JButton(resistance2);
-    JButton btnSix = new JButton("F.e.m");
+    JButton btnSix = new JButton( new Pile("X"));
+
 
     Image image619 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.19.png");
     JButton button[] = new JButton[6];
@@ -81,8 +85,8 @@ public class BackGround619 extends Background {
 
 	@Override
 	boolean verifier() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return btnQuatre.getIcon().equals(reponseA) && btnSix.getIcon().equals(reponseB);
 	}
     
 }
