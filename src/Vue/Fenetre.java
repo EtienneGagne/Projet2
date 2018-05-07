@@ -411,6 +411,10 @@ public class Fenetre extends JFrame {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 timer.start();
+                if (niveauActuel != -1) {
+                    //enlever le backGround actuel 
+                    pnlJeu.remove(backgrounds[niveauActuel]);
+                }
                 niveauActuel = 0;
                 changerDeNiveau();
             }
