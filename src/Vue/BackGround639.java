@@ -4,11 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.datatransfer.Transferable;
-
-import javax.swing.Icon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.TransferHandler;
 
 /**
@@ -70,7 +66,6 @@ public class BackGround639 extends Background {
         add(button[4]);
        
         button[0].setBounds(125, 138, 100, 75);
-        //button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(375, 138, 100, 75);
         button[1].setTransferHandler(new TransferHandler("icon"));
         button[2].setBounds(250, 325, 100, 75);

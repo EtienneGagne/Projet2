@@ -64,15 +64,12 @@ public class BackGround619 extends Background {
         add(button[3]);
         add(button[4]);
         add(button[5]);
+        
         button[0].setBounds(222, 115, 100, 75);
-       // button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(222, 235, 100, 75);
-        //button[1].setTransferHandler(new TransferHandler("icon"));
         button[2].setBounds(365, 175, 100, 75);
-        //button[2].setTransferHandler(new TransferHandler("icon"));
         button[3].setBounds(280, 345, 100, 75);
         button[3].setTransferHandler(new TransferHandler("icon"));
-       // button[4].setBounds(70, 275, 100, 75);
         button[4].setTransferHandler(new TransferHandler("icon"));
         button[5].setBounds(250, 590, 100, 75);
         button[5].setTransferHandler(new TransferHandler("icon"));

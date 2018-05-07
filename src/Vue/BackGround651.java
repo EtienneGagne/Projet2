@@ -62,23 +62,16 @@ public class BackGround651 extends Background  {
     add(button[2]);
     add(button[3]);
     add(button[4]);
-  
-    
-                      //x    y   L  H
+
     button[0].setBounds(120,120,100,75);
-    button[0].setTransferHandler(new TransferHandler("icon"));
     button[1].setBounds(120,310,100,75);
     button[1].setTransferHandler(new TransferHandler("icon"));
     button[2].setBounds(360,310,100,75);
-    button[2].setTransferHandler(new TransferHandler("icon"));
-    
     button[3].setBounds(160,600,100,75);
     button[3].setTransferHandler(new TransferHandler("icon"));
     button[4].setBounds(360,600,100,75);
-    button[4].setTransferHandler(new TransferHandler("icon"));
  
   
- 
 }
     @Override
     public String toString() {

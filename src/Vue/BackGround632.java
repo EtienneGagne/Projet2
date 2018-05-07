@@ -27,7 +27,7 @@ public class BackGround632 extends Background {
     final JButton btnUn = new JButton(resistance8);
     JButton btnDeux = new JButton(new Pile("X"));
     final JButton btnTrois = new JButton(resistance5);
-    final JButton btnQuatre = new JButton(ResistanceCouleur11);//couleur
+    final JButton btnQuatre = new JButton(ResistanceCouleur11);
     final JButton btnCinq = new JButton(pile12);
     final JButton btnSix = new JButton(resistance7);
     final JButton btnSept = new JButton(resistance5);
@@ -75,23 +75,15 @@ public class BackGround632 extends Background {
         add(button[6]);
         add(button[7]);
 
-        //x    y   L  H
         button[0].setBounds(120, 50, 100, 75);
-        button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(260, 50, 100, 75);
         button[1].setTransferHandler(new TransferHandler("icon"));
         button[2].setBounds(400, 50, 100, 75);
-        button[2].setTransferHandler(new TransferHandler("icon"));
-
         button[3].setBounds(120, 230, 100, 75);
         button[3].setTransferHandler(new TransferHandler("icon"));
         button[4].setBounds(260, 230, 100, 75);
-        button[4].setTransferHandler(new TransferHandler("icon"));
         button[5].setBounds(400, 230, 100, 75);
-        button[5].setTransferHandler(new TransferHandler("icon"));
-
         button[6].setBounds(160, 600, 100, 75);
-        button[6].setTransferHandler(new TransferHandler("icon"));
         button[7].setBounds(360, 600, 100, 75);
         button[7].setTransferHandler(new TransferHandler("icon"));
     }
