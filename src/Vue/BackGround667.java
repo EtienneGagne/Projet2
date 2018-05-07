@@ -9,7 +9,7 @@ import javax.swing.TransferHandler;
 
 /**
  *
- * @author 1637157
+ *AEC
  */
 public class BackGround667 extends Background {
 

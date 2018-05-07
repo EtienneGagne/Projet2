@@ -1,28 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vue;
 
 import javax.swing.JPanel;
 
 /**
- *
- * @author audre
+ *Classe mère de BackGround
+ *@author AEC
  */
 public abstract class Background extends JPanel{
   
     /**
-     *
+     *constructeur Background
      */
     public Background() {
         setLayout(null);
         
     }
-    
+    /**
+     * Initialiser le background
+     */
     abstract void init();
-    
+    /**
+     * verifier la réponse
+     * @return boolean
+     */
     abstract boolean verifier();
 
  
