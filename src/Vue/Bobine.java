@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * AEC
+ * @author AEC
  */
 public class Bobine extends ImageIcon {
 //cherche fichier photo 

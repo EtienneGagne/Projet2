@@ -17,11 +17,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-
 /**
- *Fenetre de jeu 
+ * Fenetre de jeu
  */
 public class Fenetre extends JFrame {
+
     //Nombre de point initialement a 0
     private int nombrePoint = 0;
     //Démarrage du chrono a 0
@@ -62,44 +62,35 @@ public class Fenetre extends JFrame {
     //création des composantes du circuit
     private JLabel composantes[] = {
         new JLabel(new Amperemetre("0.4")), new JLabel(new Amperemetre("3")),
-        
         new JLabel(new Ampoule()),
-        
         new JLabel(new Bobine()),
-        
         new JLabel(new Condensateur("2")), new JLabel(new Condensateur("3")), new JLabel(new Condensateur("4")),
         new JLabel(new Condensateur("6")), new JLabel(new Condensateur("10")),
-        
         new JLabel(new InterrupteurO()),
         new JLabel(new InterrupteurF()),
-        
         new JLabel(new Pile("4")), new JLabel(new Pile("4.5")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
         new JLabel(new Pile("12")), new JLabel(new Pile("15")), new JLabel(new Pile("18")), new JLabel(new Pile("36")), new JLabel(new Pile("90")),
         new JLabel(new Pile("120")), new JLabel(new Pile("204")),
-        
         new JLabel(new Voltmetre("1.5")), new JLabel(new Voltmetre("6")),
-        
         new JLabel(new Resistance("1")), new JLabel(new Resistance("2")),
-        new JLabel(new Resistance("3")), new JLabel(new Resistance("4")), 
+        new JLabel(new Resistance("3")), new JLabel(new Resistance("4")),
         new JLabel(new Resistance("5")), new JLabel(new Resistance("6")),
-        new JLabel(new Resistance("7")),new JLabel(new Resistance("8")),
-        new JLabel(new Resistance("10")),new JLabel(new Resistance("11")),
-        new JLabel(new Resistance("2K")),new JLabel(new Resistance("3K")),
-        new JLabel(new Resistance("4K")),new JLabel(new Resistance("7K")),
-        new JLabel(new Resistance("10K")),new JLabel(new Resistance("50K")),
+        new JLabel(new Resistance("7")), new JLabel(new Resistance("8")),
+        new JLabel(new Resistance("10")), new JLabel(new Resistance("11")),
+        new JLabel(new Resistance("2K")), new JLabel(new Resistance("3K")),
+        new JLabel(new Resistance("4K")), new JLabel(new Resistance("7K")),
+        new JLabel(new Resistance("10K")), new JLabel(new Resistance("50K")),
         new JLabel(new Resistance("100K")),
-        
         new JLabel(new Resistance("10", true)), new JLabel(new Resistance("11", true)),
-        new JLabel(new Resistance("2K", true)),new JLabel(new Resistance("3K", true)),
+        new JLabel(new Resistance("2K", true)), new JLabel(new Resistance("3K", true)),
         new JLabel(new Resistance("4K", true)), new JLabel(new Resistance("7K", true)),
-        new JLabel(new Resistance("10K", true)), new JLabel(new Resistance("50K", true)), 
+        new JLabel(new Resistance("10K", true)), new JLabel(new Resistance("50K", true)),
         new JLabel(new Resistance("100K", true))
     };
-    
+
     /**
      * Chronometre mis en action
      */
-
     Timer timer = new Timer(1000, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -111,6 +102,7 @@ public class Fenetre extends JFrame {
         }
 
     });
+
     /**
      * constructeur de la fenetre
      */
@@ -134,7 +126,7 @@ public class Fenetre extends JFrame {
     }
 
     /**
-     *Configuration de la fenêtre de jeu avec les Jcomposantes
+     * Configuration de la fenêtre de jeu avec les Jcomposantes
      */
     public void settingWindow() {
         add(pnlPrincipal);
@@ -182,44 +174,61 @@ public class Fenetre extends JFrame {
         pnlPrincipal.add(scrollPane);
         //action du bouton de vérification
         btnVerifier.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-                                //vérification des élément 
-				if (backgrounds[niveauActuel].verifier() == true) {
-					bonneReponse();
-				} else {
-					mauvaiseReponse();
-				}
-			}
-		});
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                //vérification des élément 
+                if (backgrounds[niveauActuel].verifier() == true) {
+                    bonneReponse();
+                } else {
+                    mauvaiseReponse();
+                }
+            }
+        });
     }
+
     /**
      * Message affiché lorsque la réponse est bonne
      */
-    
     private void bonneReponse() {
         //afficher message
-    	JOptionPane.showMessageDialog(null, "Bravo!!!  Bonne reponse!");
+        JOptionPane.showMessageDialog(null, "Bravo!!!  Bonne reponse!");
         //réinitialise
-    	pnlJeu.remove(backgrounds[niveauActuel]);
+        pnlJeu.remove(backgrounds[niveauActuel]);
         //changment vers niveau supérieur
-    	niveauActuel++;
+
+        if (niveauActuel == 9) {
+            timer.stop();
+            int dialogBouton = JOptionPane.YES_NO_OPTION;
+            int reponse = JOptionPane.showConfirmDialog(null, "Votre pointage est de "
+                    + nombrePoint + "et votre temps est de " + chrono + ". Voulez vous quitter?", "Question", dialogBouton);
+            if (reponse == JOptionPane.NO_OPTION) {
+
+            } else if (reponse == JOptionPane.YES_OPTION) {
+                //le programme se ferme
+                System.exit(0);
+            }
+
+        } else {
+            niveauActuel++;
+        }
         nombrePoint += 10;
         lblPoint.setText(nombrePoint + " points     ");
         pnlChronoPoint.revalidate();
         pnlChronoPoint.repaint();
-    	changerDeNiveau();
+        changerDeNiveau();
     }
+
     /**
      * Message affiché lorsque la réponse est mauvaise
      */
     private void mauvaiseReponse() {
-    	JOptionPane.showMessageDialog(null, "Essaie encore!");
+        JOptionPane.showMessageDialog(null, "Essaie encore!");
         nombrePoint -= 2;
         lblPoint.setText(nombrePoint + " points     ");
         pnlChronoPoint.revalidate();
         pnlChronoPoint.repaint();
     }
+
     /**
      * création des menus du jeu
      */
@@ -233,20 +242,20 @@ public class Fenetre extends JFrame {
         //ajouter séparateur
         mnuFichier.addSeparator();
         mnuFichier.add(mnuAPropos);
-         //ajouter séparateur
+        //ajouter séparateur
         mnuFichier.addSeparator();
         mnuFichier.add(mnuQuitter);
 
         mnuAide.add(mnuFormules);
-         //ajouter séparateur
+        //ajouter séparateur
         mnuAide.addSeparator();
         mnuAide.add(mnuReponses);
-         //ajouter séparateur
+        //ajouter séparateur
         mnuAide.addSeparator();
         mnuAide.add(mnuRegles);
 
         mnuMode.add(mnuApprentissage);
-         //ajouter séparateur
+        //ajouter séparateur
         mnuMode.addSeparator();
         mnuMode.add(mnuChrono);
         //setter le menus avec les menus précédents
@@ -256,7 +265,7 @@ public class Fenetre extends JFrame {
     }
 
     /**
-     *Action créée en cliquant sur les éléments du menu
+     * Action créée en cliquant sur les éléments du menu
      */
     public void listenersMenus() {
         //faire une nouvelle partie
@@ -326,7 +335,7 @@ public class Fenetre extends JFrame {
         mnuReponses.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                   //tableau contenant les niveaux
+                //tableau contenant les niveaux
                 Integer[] niveaux = {1, 2, 3, 4, 5, 6, 7, 8, 9};
                 //demande le niveau afin d'afficher la réponse
                 int input = (int) JOptionPane.showInputDialog(null,
@@ -408,33 +417,56 @@ public class Fenetre extends JFrame {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 timer.start();
+                niveauActuel = 0;
+                changerDeNiveau();
             }
 
         });
 
     }
+
     /**
      * Changement de niveau (background, énoncé, niveau)
      */
-    
     private void changerDeNiveau() {
-        //changment de background
-        pnlJeu.add(backgrounds[niveauActuel], BorderLayout.CENTER);
-        //énoncé du problème relié au background
-        probleme = backgrounds[niveauActuel].toString();
-        lblEnoncer.setText("Énoncé du problème : " + "\n" + probleme);
-        //changement de ligne dans l'énoncé
-        lblEnoncer.setLineWrap(true);
-        //changment du niveau affiché
-        lblNiveau.setText("Niveau : " + (niveauActuel + 1) + "\n");
-        //réinitialiser le tout
-        pnlJeu.revalidate();
-        pnlJeu.repaint();	
+        if (niveauActuel < 9) {
+            //changment de background
+            pnlJeu.add(backgrounds[niveauActuel], BorderLayout.CENTER);
+            //énoncé du problème relié au background
+            probleme = backgrounds[niveauActuel].toString();
+            lblEnoncer.setText("Énoncé du problème : " + "\n" + probleme);
+            //changement de ligne dans l'énoncé
+            lblEnoncer.setLineWrap(true);
+            //changment du niveau affiché
+            lblNiveau.setText("Niveau : " + (niveauActuel + 1) + "\n");
+            //réinitialiser le tout
+            pnlJeu.revalidate();
+            pnlJeu.repaint();
+        } else {
+            int dialogBouton = JOptionPane.YES_NO_OPTION;
+            int reponse = JOptionPane.showConfirmDialog(null, "Bravo! Vous avex fini le jeu! \n Votre pointage: "
+                    + nombrePoint + " \n"
+                    + " Votre temps: " + chrono + "\n Voulez vous quitter?", "Question", dialogBouton);
+            if (reponse == JOptionPane.NO_OPTION) {
+
+                //réinitialiser et recréer
+                niveauActuel = -1;
+                chrono = 0;
+                nombrePoint = 0;
+                probleme = "";
+                pnlJeu.revalidate();
+                pnlJeu.repaint();
+
+            } else if (reponse == JOptionPane.YES_OPTION) {
+                //le programme se ferme
+                System.exit(0);
+            }
+        }
     }
+
     /**
      * création des backgrounds
      */
-
     private void creerNiveaux() {
         backgrounds = new Background[]{new BackGround419(), new BackGround619(),
             new BackGround621(), new BackGround625(),
@@ -459,4 +491,7 @@ public class Fenetre extends JFrame {
         return nombrePoint;
     }
 
+    public void reset() {
+
+    }
 }
