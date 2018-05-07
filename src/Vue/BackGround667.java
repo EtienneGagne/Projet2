@@ -1,5 +1,6 @@
 package Vue;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -45,7 +46,7 @@ public class BackGround667 extends Background {
         super.paintComponent(g);
 
         g.drawImage(image667, 0, 0, this);
-
+        btnQuatre.setBackground(Color.WHITE);
     }
 
     /**

@@ -21,22 +21,7 @@ public class Main {
     public static void main(String[] args) {
        //création fenetre
        Fenetre fenetre=new Fenetre();
-     try {
-    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-        if ("Arial".equals(info.getName())) {
-            UIManager.setLookAndFeel(info.getClassName());
-            break;
-        }
-    }
-} catch (UnsupportedLookAndFeelException e) {
-    // handle exception
-} catch (ClassNotFoundException e) {
-    // handle exception
-} catch (InstantiationException e) {
-    // handle exception
-} catch (IllegalAccessException e) {
-    // handle exception
-}
+    
 
     }
     

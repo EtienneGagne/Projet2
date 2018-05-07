@@ -1,5 +1,6 @@
 package Vue;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -11,16 +12,16 @@ import javax.swing.TransferHandler;
  * @author 1637157
  */
 public class BackGround625 extends Background {
-    
+
     private Resistance resistance6 = new Resistance("6");
     private Pile pile6 = new Pile("6");
     private Resistance resistance10 = new Resistance("10");
     private Resistance resistance5 = new Resistance("5");
     private Pile pile45 = new Pile("4.5");
-   
-    private Amperemetre reponseA=new Amperemetre("0.4");
-    private Voltmetre reponseB=new Voltmetre("1.5");
-   
+
+    private Amperemetre reponseA = new Amperemetre("0.4");
+    private Voltmetre reponseB = new Voltmetre("1.5");
+
     JButton btnUn = new JButton();
     final JButton btnDeux = new JButton(resistance6);
     final JButton btnTrois = new JButton(pile6);
@@ -30,10 +31,9 @@ public class BackGround625 extends Background {
     final JButton btnSept = new JButton(pile45);
     final JButton btnHuit = new JButton(resistance6);
 
-
     Image image625 = Toolkit.getDefaultToolkit().getImage("ImagesNiveaux/6.25.png");
     JButton button[] = new JButton[8];
-    
+
     /**
      *
      */
@@ -47,7 +47,8 @@ public class BackGround625 extends Background {
         super.paintComponent(g);
 
         g.drawImage(image625, 0, 0, this);
-
+        btnUn.setBackground(Color.WHITE);
+        btnQuatre.setBackground(Color.WHITE);
     }
 
     /**
@@ -71,7 +72,7 @@ public class BackGround625 extends Background {
         add(button[5]);
         add(button[6]);
         add(button[7]);
-        
+
         button[0].setBounds(150, 50, 100, 75);
         button[0].setTransferHandler(new TransferHandler("icon"));
         button[1].setBounds(350, 50, 100, 75);
@@ -83,14 +84,15 @@ public class BackGround625 extends Background {
         button[6].setBounds(350, 425, 100, 75);
         button[7].setBounds(250, 595, 100, 75);
     }
+
     @Override
     public String toString() {
-        return "A) Place l'ampèremètre au bonne endroit avec la bonne valeur affichée sur l'ampèremètre."+"\n"
+        return "A) Place l'ampèremètre au bonne endroit avec la bonne valeur affichée sur l'ampèremètre." + "\n"
                 + "B) Place le voltmètre au bonne endroit avec la bonne valeur affichée sur le voltmètre.";
     }
 
-	@Override
-	boolean verifier() {
-		return btnUn.getIcon().equals(reponseA) && btnSix.getIcon().equals(reponseB);
-	}
+    @Override
+    boolean verifier() {
+        return btnUn.getIcon().equals(reponseA) && btnSix.getIcon().equals(reponseB);
+    }
 }

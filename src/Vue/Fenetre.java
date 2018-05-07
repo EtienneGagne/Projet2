@@ -73,24 +73,26 @@ public class Fenetre extends JFrame {
         new JLabel(new InterrupteurO()),
         new JLabel(new InterrupteurF()),
         
-        new JLabel(new Pile("4.5")), new JLabel(new Pile("15")),new JLabel(new Pile("4")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
-        new JLabel(new Pile("12")), new JLabel(new Pile("18")), new JLabel(new Pile("36")), new JLabel(new Pile("90")),
+        new JLabel(new Pile("4")), new JLabel(new Pile("4.5")), new JLabel(new Pile("6")), new JLabel(new Pile("8")), new JLabel(new Pile("10")),
+        new JLabel(new Pile("12")), new JLabel(new Pile("15")), new JLabel(new Pile("18")), new JLabel(new Pile("36")), new JLabel(new Pile("90")),
         new JLabel(new Pile("120")), new JLabel(new Pile("204")),
         
         new JLabel(new Voltmetre("1.5")), new JLabel(new Voltmetre("6")),
         
         new JLabel(new Resistance("1")), new JLabel(new Resistance("2")),
-        new JLabel(new Resistance("2K")), new JLabel(new Resistance("3")), new JLabel(new Resistance("3K")),
-        new JLabel(new Resistance("4")), new JLabel(new Resistance("4K")), new JLabel(new Resistance("5")),
-        new JLabel(new Resistance("6")), new JLabel(new Resistance("7")), new JLabel(new Resistance("7K")),
-        new JLabel(new Resistance("8")), new JLabel(new Resistance("10")), new JLabel(new Resistance("10K")),
+        new JLabel(new Resistance("3")), new JLabel(new Resistance("4")), 
+        new JLabel(new Resistance("5")), new JLabel(new Resistance("6")),
+        new JLabel(new Resistance("7")),new JLabel(new Resistance("8")),
+        new JLabel(new Resistance("10")),new JLabel(new Resistance("11")),
+        new JLabel(new Resistance("2K")),new JLabel(new Resistance("3K")),
+        new JLabel(new Resistance("4K")),new JLabel(new Resistance("7K")),
+        new JLabel(new Resistance("10K")),new JLabel(new Resistance("50K")),
         new JLabel(new Resistance("100K")),
         
-        new JLabel(new Resistance("11")), new JLabel(new Resistance("50K")),
+        new JLabel(new Resistance("10", true)), new JLabel(new Resistance("11", true)),
         new JLabel(new Resistance("2K", true)),new JLabel(new Resistance("3K", true)),
         new JLabel(new Resistance("4K", true)), new JLabel(new Resistance("7K", true)),
-        new JLabel(new Resistance("10K", true)), new JLabel(new Resistance("10", true)),
-        new JLabel(new Resistance("11", true)),new JLabel(new Resistance("50K", true)), 
+        new JLabel(new Resistance("10K", true)), new JLabel(new Resistance("50K", true)), 
         new JLabel(new Resistance("100K", true))
     };
     
